@@ -9,6 +9,7 @@ import android.Manifest
 import android.content.Context
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
+import android.os.Process
 import androidx.core.graphics.drawable.toBitmap
 import org.calyxos.datura.models.App
 
@@ -20,7 +21,7 @@ object CommonUtils {
 
         val packageList = packageManager.getInstalledPackages(
             PackageManager.PackageInfoFlags.of(PackageManager.GET_PERMISSIONS.toLong())
-        )
+        ).filter { Process.isApplicationUid(it.applicationInfo.uid) }
 
         packageList.forEach { packageInfo ->
             val app = App(
