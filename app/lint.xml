@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  SPDX-FileCopyrightText: 2023 The Calyx Institute
+  SPDX-License-Identifier: Apache-2.0
+  -->
+<lint>
+    <issue id="QueryAllPackagesPermission" severity="ignore" />
+    <issue id="ProtectedPermissions" severity="ignore" />
+</lint>

@@ -4,4 +4,8 @@
   -->
 <resources>
     <string name="app_name">Firewall</string>
+
+    <!-- AppList Fragment -->
+    <string name="app_logo">App\'s logo</string>
+    <string name="searchbar_hint">Search for apps</string>
 </resources>
