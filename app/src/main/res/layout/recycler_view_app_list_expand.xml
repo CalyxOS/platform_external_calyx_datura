@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  SPDX-FileCopyrightText: 2023 The Calyx Institute
+  SPDX-License-Identifier: Apache-2.0
+  -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/backgroundLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawablePadding="30dp"
+            android:gravity="center_vertical"
+            android:paddingStart="15dp"
+            android:paddingEnd="0dp"
+            android:text="@string/allow_background_data"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="14sp"
+            app:drawableStartCompat="@drawable/ic_sync" />
+
+        <com.google.android.material.materialswitch.MaterialSwitch
+            android:id="@+id/backgroundSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:thumbTint="@color/material_switch_thumb"
+            app:trackDecorationTint="@color/material_switch_decoration"
+            app:trackTint="@color/material_switch_track" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/wifiLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/backgroundLayout">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawablePadding="30dp"
+            android:gravity="center_vertical"
+            android:paddingStart="15dp"
+            android:paddingEnd="0dp"
+            android:text="@string/allow_wifi_data"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="14sp"
+            app:drawableStartCompat="@drawable/ic_wifi" />
+
+        <com.google.android.material.materialswitch.MaterialSwitch
+            android:id="@+id/wifiSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:thumbTint="@color/material_switch_thumb"
+            app:trackDecorationTint="@color/material_switch_decoration"
+            app:trackTint="@color/material_switch_track" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/mobileLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/wifiLayout">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawablePadding="30dp"
+            android:gravity="center_vertical"
+            android:paddingStart="15dp"
+            android:paddingEnd="0dp"
+            android:text="@string/allow_mobile_data"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="14sp"
+            app:drawableStartCompat="@drawable/ic_cell" />
+
+        <com.google.android.material.materialswitch.MaterialSwitch
+            android:id="@+id/mobileSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:thumbTint="@color/material_switch_thumb"
+            app:trackDecorationTint="@color/material_switch_decoration"
+            app:trackTint="@color/material_switch_track" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/vpnLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mobileLayout">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:drawablePadding="30dp"
+            android:gravity="center_vertical"
+            android:paddingStart="15dp"
+            android:paddingEnd="0dp"
+            android:text="@string/allow_vpn_data"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="14sp"
+            app:drawableStartCompat="@drawable/ic_vpn" />
+
+        <com.google.android.material.materialswitch.MaterialSwitch
+            android:id="@+id/vpnSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:thumbTint="@color/material_switch_thumb"
+            app:trackDecorationTint="@color/material_switch_decoration"
+            app:trackTint="@color/material_switch_track" />
+
+    </LinearLayout>
+
+</LinearLayout>

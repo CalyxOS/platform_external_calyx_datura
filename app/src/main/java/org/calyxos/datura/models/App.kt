@@ -13,5 +13,6 @@ data class App(
     val icon: Bitmap = Bitmap.createBitmap(48, 48, Bitmap.Config.RGB_565),
     var systemApp: Boolean = false,
     val uid: Int = -1,
-    val requestsInternetPermission: Boolean = false
+    val requestsInternetPermission: Boolean = false,
+    var isExpanded: Boolean = false
 )

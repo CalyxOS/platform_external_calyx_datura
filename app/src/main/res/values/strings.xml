@@ -8,4 +8,11 @@
     <!-- AppList Fragment -->
     <string name="app_logo">App\'s logo</string>
     <string name="searchbar_hint">Search for apps</string>
+    <string name="default_settings">Default settings</string>
+    <string name="custom_settings">Custom settings</string>
+
+    <string name="allow_background_data">Allow background network access</string>
+    <string name="allow_wifi_data">Allow Wi-Fi data</string>
+    <string name="allow_mobile_data">Allow mobile data</string>
+    <string name="allow_vpn_data">Allow VPN data</string>
 </resources>
