@@ -14,4 +14,9 @@
         android:name="org.calyxos.datura.applist.AppListFragment"
         android:label="fragment_app_list"
         tools:layout="@layout/fragment_app_list" />
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="org.calyxos.datura.about.AboutFragment"
+        android:label="@string/about"
+        tools:layout="@layout/fragment_about" />
 </navigation>

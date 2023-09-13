@@ -12,6 +12,7 @@ import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.search.SearchBar
 import com.google.android.material.search.SearchView
@@ -44,6 +45,16 @@ class AppListFragment : Hilt_AppListFragment(R.layout.fragment_app_list) {
         // Search View
         val searchView = view.findViewById<SearchView>(R.id.searchView)
         val searchBar = view.findViewById<SearchBar>(R.id.searchBar)
+
+        searchBar.apply {
+            inflateMenu(R.menu.menu_main)
+            setOnMenuItemClickListener {
+                if (it.itemId == R.id.about) {
+                    findNavController().navigate(R.id.aboutFragment)
+                }
+                true
+            }
+        }
 
         searchView.setupWithSearchBar(searchBar)
         view.findViewById<RecyclerView>(R.id.searchRecyclerView).adapter = searchAppListRVAdapter

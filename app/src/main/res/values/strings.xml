@@ -2,7 +2,7 @@
   SPDX-FileCopyrightText: 2023 The Calyx Institute
   SPDX-License-Identifier: Apache-2.0
   -->
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_name">Firewall</string>
 
     <!-- AppList Fragment -->
@@ -15,4 +15,15 @@
     <string name="allow_wifi_data">Allow Wi-Fi data</string>
     <string name="allow_mobile_data">Allow mobile data</string>
     <string name="allow_vpn_data">Allow VPN data</string>
+
+    <!-- About Fragment -->
+    <string name="about">About</string>
+    <string name="about_summary">A firewall application using Android\'s internal network API.</string>
+    <string name="about_foss">It is licensed and distributed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>. See files for individual copyright holder\'s information.</string>
+    <string name="version">Version: <xliff:g id="version">%1$s</xliff:g></string>
+    <string name="contributors_title">Contributors</string>
+    <string name="contributors_summary">Please see GitHub for a <a href="https://gitlab.com/CalyxOS/platform_packages_apps_Datura/-/graphs/android13">list of contributors</a>.</string>
+    <string name="contributing_orgs_title">Contributing Organizations</string>
+    <string name="contributing_orgs_summary"><a href="https://www.calyxinstitute.org">Calyx Institute</a> for use in <a href="https://calyxos.org">CalyxOS</a></string>
+
 </resources>
