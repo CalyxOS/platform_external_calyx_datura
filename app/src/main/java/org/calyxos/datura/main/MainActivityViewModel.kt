@@ -32,4 +32,12 @@ class MainActivityViewModel @Inject constructor(
     private fun getAppList(): List<App> {
         return CommonUtils.getAllPackages(context)
     }
+
+    fun getFilteredAppList(text: String): List<App> {
+        return if (text.isNotBlank()) {
+            _appList.value.filter { it.name.contains(text, true) }
+        } else {
+            emptyList()
+        }
+    }
 }

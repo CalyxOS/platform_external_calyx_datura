@@ -7,6 +7,8 @@ package org.calyxos.datura.applist
 
 import android.os.Bundle
 import android.view.View
+import androidx.activity.addCallback
+import androidx.core.widget.addTextChangedListener
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
@@ -27,6 +29,9 @@ class AppListFragment : Hilt_AppListFragment(R.layout.fragment_app_list) {
     @Inject
     lateinit var appListRVAdapter: AppListRVAdapter
 
+    @Inject
+    lateinit var searchAppListRVAdapter: AppListRVAdapter
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -41,9 +46,19 @@ class AppListFragment : Hilt_AppListFragment(R.layout.fragment_app_list) {
         val searchBar = view.findViewById<SearchBar>(R.id.searchBar)
 
         searchView.setupWithSearchBar(searchBar)
-        searchView.editText.setOnEditorActionListener { v, actionId, event ->
-            searchBar.text = v.text
-            false
+        view.findViewById<RecyclerView>(R.id.searchRecyclerView).adapter = searchAppListRVAdapter
+
+        searchView.editText.addTextChangedListener {
+            searchAppListRVAdapter.submitList(viewModel.getFilteredAppList(it.toString()))
+        }
+
+        // Handle back press when search view is visible
+        activity?.onBackPressedDispatcher?.addCallback(this) {
+            if (searchView.isShowing) {
+                searchView.hide()
+            } else {
+                activity?.finish()
+            }
         }
     }
 }
