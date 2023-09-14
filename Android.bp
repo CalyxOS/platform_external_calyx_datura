@@ -13,6 +13,7 @@ android_app {
     platform_apis: true,
     system_ext_specific: true,
     certificate: "platform",
+    overrides: ["Firewall"],
 
     srcs: [
         "app/src/main/java/**/*.kt",
