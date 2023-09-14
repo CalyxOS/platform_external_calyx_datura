@@ -6,12 +6,15 @@
 package org.calyxos.datura.utils
 
 import android.Manifest
+import android.app.usage.UsageStats
+import android.app.usage.UsageStatsManager
 import android.content.Context
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
 import android.os.Process
 import androidx.core.graphics.drawable.toBitmap
 import org.calyxos.datura.models.App
+import java.util.Calendar
 
 object CommonUtils {
 
@@ -19,6 +22,7 @@ object CommonUtils {
         val applicationList = mutableListOf<App>()
         val packageManager = context.packageManager
 
+        val usageStatsList = getUsageStats(context)
         val packageList = packageManager.getInstalledPackages(
             PackageManager.PackageInfoFlags.of(PackageManager.GET_PERMISSIONS.toLong())
         ).filter { Process.isApplicationUid(it.applicationInfo.uid) }
@@ -30,14 +34,29 @@ object CommonUtils {
                 packageInfo.applicationInfo.loadIcon(packageManager).toBitmap(96, 96),
                 packageInfo.applicationInfo.flags and ApplicationInfo.FLAG_SYSTEM != 0,
                 packageInfo.applicationInfo.uid,
-                packageInfo.requestedPermissions?.contains(Manifest.permission.INTERNET) ?: false
+                packageInfo.requestedPermissions?.contains(Manifest.permission.INTERNET) ?: false,
+                false,
+                usageStatsList.firstOrNull { it.packageName == packageInfo.packageName }?.lastTimeUsed ?: 0L
             )
             applicationList.add(app)
         }
 
         // Filter out system apps without internet permission
         // https://review.calyxos.org/c/CalyxOS/platform_packages_apps_Firewall/+/7295
-        applicationList.sortBy { it.name }
+        applicationList.sortWith(compareBy(String.CASE_INSENSITIVE_ORDER) { it.name })
         return applicationList.filterNot { it.systemApp && !it.requestsInternetPermission }
+    }
+
+    private fun getUsageStats(context: Context): List<UsageStats> {
+        val usageStatsManager = context.getSystemService(UsageStatsManager::class.java)
+        val calendar = Calendar.getInstance()
+        val endTime = calendar.timeInMillis
+        calendar.add(Calendar.YEAR, -1)
+        val startTime = calendar.timeInMillis
+        return usageStatsManager.queryUsageStats(
+            UsageStatsManager.INTERVAL_DAILY,
+            startTime,
+            endTime
+        )
     }
 }

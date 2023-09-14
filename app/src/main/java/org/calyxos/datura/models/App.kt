@@ -14,5 +14,6 @@ data class App(
     var systemApp: Boolean = false,
     val uid: Int = -1,
     val requestsInternetPermission: Boolean = false,
-    var isExpanded: Boolean = false
+    var isExpanded: Boolean = false,
+    val lastTimeUsed: Long = 0
 )

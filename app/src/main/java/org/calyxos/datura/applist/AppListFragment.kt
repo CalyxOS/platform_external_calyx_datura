@@ -20,6 +20,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import org.calyxos.datura.R
 import org.calyxos.datura.main.MainActivityViewModel
+import org.calyxos.datura.models.Sort
 import javax.inject.Inject
 
 @AndroidEntryPoint(Fragment::class)
@@ -40,7 +41,9 @@ class AppListFragment : Hilt_AppListFragment(R.layout.fragment_app_list) {
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.appList.collect { appListRVAdapter.submitList(it) }
         }
-        view.findViewById<RecyclerView>(R.id.recyclerView).adapter = appListRVAdapter
+        val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView).apply {
+            adapter = appListRVAdapter
+        }
 
         // Search View
         val searchView = view.findViewById<SearchView>(R.id.searchView)
@@ -49,8 +52,23 @@ class AppListFragment : Hilt_AppListFragment(R.layout.fragment_app_list) {
         searchBar.apply {
             inflateMenu(R.menu.menu_main)
             setOnMenuItemClickListener {
-                if (it.itemId == R.id.about) {
-                    findNavController().navigate(R.id.aboutFragment)
+                when (it.itemId) {
+                    R.id.about -> {
+                        findNavController().navigate(R.id.aboutFragment)
+                    }
+                    R.id.sort -> {
+                        if (viewModel.sort == Sort.NAME) {
+                            viewModel.sortAppList(Sort.LAST_USED)
+                            recyclerView.post { recyclerView.scrollToPosition(0) }
+                            it.title = getString(R.string.sort_by_name)
+                            viewModel.sort = Sort.LAST_USED
+                        } else {
+                            viewModel.sortAppList(Sort.NAME)
+                            recyclerView.post { recyclerView.scrollToPosition(0) }
+                            it.title = getString(R.string.sort_by_last_used)
+                            viewModel.sort = Sort.NAME
+                        }
+                    }
                 }
                 true
             }
