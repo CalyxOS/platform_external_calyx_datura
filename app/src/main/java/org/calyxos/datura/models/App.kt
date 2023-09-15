@@ -15,5 +15,6 @@ data class App(
     val uid: Int = -1,
     val requestsInternetPermission: Boolean = false,
     var isExpanded: Boolean = false,
-    val lastTimeUsed: Long = 0
-)
+    val lastTimeUsed: Long = 0,
+    override val type: Type = Type.APP
+) : DaturaItem

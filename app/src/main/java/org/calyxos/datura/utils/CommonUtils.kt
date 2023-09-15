@@ -13,12 +13,28 @@ import android.content.pm.ApplicationInfo
 import android.content.pm.PackageManager
 import android.os.Process
 import androidx.core.graphics.drawable.toBitmap
+import org.calyxos.datura.R
 import org.calyxos.datura.models.App
+import org.calyxos.datura.models.DaturaItem
+import org.calyxos.datura.models.Header
 import java.util.Calendar
 
 object CommonUtils {
 
-    fun getAllPackages(context: Context): List<App> {
+    fun getAllPackagesWithHeader(context: Context): List<DaturaItem> {
+        val appList = getAllPackages(context).toMutableList()
+        val daturaItemList = mutableListOf<DaturaItem>()
+
+        daturaItemList.apply {
+            add(0, Header(context.getString(R.string.installed_apps)))
+            addAll(appList.filter { !it.systemApp })
+            add(size, Header(context.getString(R.string.system_apps)))
+            addAll(appList.filter { it.systemApp })
+        }
+        return daturaItemList
+    }
+
+    private fun getAllPackages(context: Context): List<App> {
         val applicationList = mutableListOf<App>()
         val packageManager = context.packageManager
 

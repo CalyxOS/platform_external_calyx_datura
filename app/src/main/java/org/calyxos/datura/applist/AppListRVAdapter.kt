@@ -27,44 +27,96 @@ import com.google.android.material.button.MaterialButton
 import com.google.android.material.materialswitch.MaterialSwitch
 import org.calyxos.datura.R
 import org.calyxos.datura.models.App
+import org.calyxos.datura.models.DaturaItem
+import org.calyxos.datura.models.Header
+import org.calyxos.datura.models.Type
 import javax.inject.Inject
 import javax.inject.Singleton
 
 class AppListRVAdapter @Inject constructor(
-    appListDiffUtil: AppListDiffUtil,
+    daturaItemDiffUtil: DaturaItemDiffUtil,
     private val networkPolicyManager: NetworkPolicyManager
-) : ListAdapter<App, AppListRVAdapter.ViewHolder>(appListDiffUtil) {
+) : ListAdapter<DaturaItem, RecyclerView.ViewHolder>(daturaItemDiffUtil) {
 
-    inner class ViewHolder(val view: View) : RecyclerView.ViewHolder(view)
+    inner class AppViewHolder(val view: View) : RecyclerView.ViewHolder(view)
+    inner class HeaderViewHolder(val view: View) : RecyclerView.ViewHolder(view)
 
     @Singleton
-    class AppListDiffUtil @Inject constructor() : DiffUtil.ItemCallback<App>() {
+    class DaturaItemDiffUtil @Inject constructor() : DiffUtil.ItemCallback<DaturaItem>() {
 
-        override fun areItemsTheSame(oldItem: App, newItem: App): Boolean {
-            return oldItem.packageName == newItem.packageName
+        override fun areItemsTheSame(oldItem: DaturaItem, newItem: DaturaItem): Boolean {
+            return when (oldItem.type) {
+                newItem.type -> {
+                    if (oldItem.type == Type.APP) {
+                        (oldItem as App).packageName == (newItem as App).packageName
+                    } else {
+                        (oldItem as Header).name == (newItem as Header).name
+                    }
+                }
+                else -> false
+            }
         }
 
-        override fun areContentsTheSame(oldItem: App, newItem: App): Boolean {
-            return when {
-                oldItem.icon != newItem.icon -> false
-                oldItem.name != newItem.name -> false
-                oldItem.packageName != newItem.packageName -> false
-                oldItem.systemApp != newItem.systemApp -> false
-                oldItem.uid != newItem.uid -> false
-                else -> true
+        override fun areContentsTheSame(oldItem: DaturaItem, newItem: DaturaItem): Boolean {
+            return when (oldItem.type) {
+                Type.APP -> {
+                    val oldApp = (oldItem as App)
+                    val newApp = (newItem as App)
+                    when {
+                        oldApp.icon != newApp.icon -> false
+                        oldApp.name != newApp.name -> false
+                        oldApp.packageName != newApp.packageName -> false
+                        oldApp.systemApp != newApp.systemApp -> false
+                        oldApp.uid != newApp.uid -> false
+                        oldApp.requestsInternetPermission != newApp.requestsInternetPermission -> false
+                        oldApp.isExpanded != newApp.isExpanded -> false
+                        else -> true
+                    }
+                }
+                Type.HEADER -> {
+                    (oldItem as Header).name == (newItem as Header).name
+                }
             }
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(
-            LayoutInflater.from(parent.context)
-                .inflate(R.layout.recycler_view_app_list, parent, false)
-        )
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        return when (viewType) {
+            Type.APP.ordinal -> {
+                AppViewHolder(
+                    LayoutInflater.from(parent.context)
+                        .inflate(R.layout.recycler_view_app_list, parent, false)
+                )
+            }
+            else -> {
+                HeaderViewHolder(
+                    LayoutInflater.from(parent.context)
+                        .inflate(R.layout.recycler_view_header_list, parent, false)
+                )
+            }
+        }
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val app = getItem(position)
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        if (holder is AppViewHolder) {
+            onBindAppViewHolder(holder, position)
+        } else if (holder is HeaderViewHolder) {
+            onBindHeaderViewHolder(holder, position)
+        }
+    }
+
+    override fun getItemViewType(position: Int): Int {
+        return currentList[position].type.ordinal
+    }
+
+    private fun onBindHeaderViewHolder(holder: HeaderViewHolder, position: Int) {
+        val header = getItem(position) as Header
+
+        holder.view.findViewById<TextView>(R.id.header).text = header.name
+    }
+
+    private fun onBindAppViewHolder(holder: AppViewHolder, position: Int) {
+        val app = getItem(position) as App
 
         // Map of switches to their policy
         val mapOfViewAndPolicy = mapOf(
@@ -83,10 +135,8 @@ class AppListRVAdapter @Inject constructor(
             expandLayout(holder.view, app.isExpanded, app.requestsInternetPermission)
             setOnClickListener {
                 if (it.isVisible && app.requestsInternetPermission) {
-                    currentList.find { a -> a.packageName == app.packageName }?.isExpanded =
-                        !app.isExpanded
-
-                    expandLayout(holder.view, app.isExpanded, app.requestsInternetPermission)
+                    (currentList[position] as App).isExpanded = !app.isExpanded
+                    expandLayout(holder.view, app.isExpanded, true)
                 }
             }
 

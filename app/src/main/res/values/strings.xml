@@ -19,6 +19,9 @@
     <string name="sort_by_last_used">Sort by last used</string>
     <string name="sort_by_name">Sort by name</string>
 
+    <string name="installed_apps">Installed apps</string>
+    <string name="system_apps">System apps</string>
+
     <!-- About Fragment -->
     <string name="about">About</string>
     <string name="about_summary">A firewall application using Android\'s internal network API.</string>
