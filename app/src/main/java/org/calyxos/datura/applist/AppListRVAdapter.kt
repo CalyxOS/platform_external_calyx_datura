@@ -135,7 +135,7 @@ class AppListRVAdapter @Inject constructor(
             expandLayout(holder.view, app.isExpanded, app.requestsInternetPermission)
             setOnClickListener {
                 if (it.isVisible && app.requestsInternetPermission) {
-                    (currentList[position] as App).isExpanded = !app.isExpanded
+                    (currentList[holder.adapterPosition] as App).isExpanded = !app.isExpanded
                     expandLayout(holder.view, app.isExpanded, true)
                 }
             }
