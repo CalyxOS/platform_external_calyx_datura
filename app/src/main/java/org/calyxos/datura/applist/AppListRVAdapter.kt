@@ -158,17 +158,17 @@ class AppListRVAdapter @Inject constructor(
                             }
 
                             // Reflect appropriate settings status
-                            updateSettingsMode(
+                            updateSettingsText(
                                 holder.view,
                                 mapOfViewAndPolicy.keys,
-                                !app.requestsInternetPermission
+                                app.requestsInternetPermission
                             )
                         }
                     }
                 }
             }
 
-            updateSettingsMode(this, mapOfViewAndPolicy.keys, !app.requestsInternetPermission)
+            updateSettingsText(this, mapOfViewAndPolicy.keys, app.requestsInternetPermission)
         }
     }
 
@@ -196,14 +196,18 @@ class AppListRVAdapter @Inject constructor(
         }
     }
 
-    private fun updateSettingsMode(rootView: View, switches: Set<Int>, forceDefault: Boolean) {
+    private fun updateSettingsText(rootView: View, switches: Set<Int>, reqInternetPerm: Boolean) {
         rootView.apply {
             val settingsMode = findViewById<TextView>(R.id.settingsMode)
 
-            if (switches.all { findViewById<MaterialSwitch>(it).isChecked } || forceDefault) {
-                settingsMode.text = context.getString(R.string.default_settings)
+            if (reqInternetPerm) {
+                if (switches.all { findViewById<MaterialSwitch>(it).isChecked }) {
+                    settingsMode.text = context.getString(R.string.default_settings)
+                } else {
+                    settingsMode.text = context.getString(R.string.custom_settings)
+                }
             } else {
-                settingsMode.text = context.getString(R.string.custom_settings)
+                settingsMode.text = String()
             }
         }
     }
