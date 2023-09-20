@@ -13,6 +13,7 @@
         android:id="@+id/backgroundLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center_vertical"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,10 +21,9 @@
 
         <TextView
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:drawablePadding="30dp"
-            android:gravity="center_vertical"
             android:paddingStart="15dp"
             android:paddingEnd="0dp"
             android:text="@string/allow_background_data"
@@ -45,6 +45,7 @@
         android:id="@+id/wifiLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center_vertical"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -52,10 +53,9 @@
 
         <TextView
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:drawablePadding="30dp"
-            android:gravity="center_vertical"
             android:paddingStart="15dp"
             android:paddingEnd="0dp"
             android:text="@string/allow_wifi_data"
@@ -77,6 +77,7 @@
         android:id="@+id/mobileLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center_vertical"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -84,10 +85,9 @@
 
         <TextView
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:drawablePadding="30dp"
-            android:gravity="center_vertical"
             android:paddingStart="15dp"
             android:paddingEnd="0dp"
             android:text="@string/allow_mobile_data"
@@ -109,6 +109,7 @@
         android:id="@+id/vpnLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center_vertical"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -116,10 +117,9 @@
 
         <TextView
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:drawablePadding="30dp"
-            android:gravity="center_vertical"
             android:paddingStart="15dp"
             android:paddingEnd="0dp"
             android:text="@string/allow_vpn_data"
