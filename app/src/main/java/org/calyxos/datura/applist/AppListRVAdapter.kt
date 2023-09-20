@@ -141,10 +141,20 @@ class AppListRVAdapter @Inject constructor(
             }
 
             // Switches, Checked/0 == Allowed to connect to internet (default)
+            val mainSwitchEnabled =
+                (networkPolicyManager.getUidPolicy(app.uid) and POLICY_REJECT_ALL) == 0
+
             mapOfViewAndPolicy.forEach { (viewID, policy) ->
                 findViewById<MaterialSwitch>(viewID).apply {
                     setOnCheckedChangeListener(null)
-                    isEnabled = app.requestsInternetPermission
+
+                    // Ensure main switch is enabled before enabling child switches
+                    isEnabled = if (viewID == R.id.mainSwitch) {
+                        app.requestsInternetPermission
+                    } else {
+                        app.requestsInternetPermission && mainSwitchEnabled
+                    }
+
                     isChecked =
                         (networkPolicyManager.getUidPolicy(app.uid) and policy) == 0 &&
                         app.requestsInternetPermission
@@ -155,6 +165,14 @@ class AppListRVAdapter @Inject constructor(
                                 networkPolicyManager.removeUidPolicy(app.uid, policy)
                             } else {
                                 networkPolicyManager.addUidPolicy(app.uid, policy)
+                            }
+
+                            // Disable/Enable child buttons if main switch was toggled
+                            if (viewID == R.id.mainSwitch) {
+                                mapOfViewAndPolicy.filter { it.key != R.id.mainSwitch }.forEach {
+                                    holder.view.findViewById<MaterialSwitch>(it.key).isEnabled =
+                                        isChecked
+                                }
                             }
 
                             // Reflect appropriate settings status
