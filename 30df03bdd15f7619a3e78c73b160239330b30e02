@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0780afcd_a8745efd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-09-21T21:04:28Z",
+      "side": 1,
+      "message": "I imagine we\u0027ll only need it in one place now.\n\n12 -\u003e 13, given this is for android 13\n31 -\u003e 33, same\n\n1.0 -\u003e 2.0, given the rewrite.",
+      "revId": "30df03bdd15f7619a3e78c73b160239330b30e02",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
