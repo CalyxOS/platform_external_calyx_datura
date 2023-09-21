@@ -5,8 +5,8 @@
   -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.calyxos.datura"
-    android:versionCode="31000001"
-    android:versionName="12-1.0">
+    android:versionCode="33000001"
+    android:versionName="13-2.0">
 
     <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES" />
     <uses-permission android:name="android.permission.MANAGE_NETWORK_POLICY" />

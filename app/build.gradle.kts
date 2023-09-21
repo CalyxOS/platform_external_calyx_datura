@@ -19,8 +19,8 @@ android {
         applicationId = "org.calyxos.datura"
         minSdk = 33
         targetSdk = 33
-        versionCode = 31000001
-        versionName = "12-1.0"
+        versionCode = 33000001
+        versionName = "13-2.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
