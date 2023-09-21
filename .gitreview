@@ -1,5 +1,5 @@
 [gerrit]
 host=review.calyxos.org
 port=29418
-project=CalyxOS/platform_packages_apps_Datura
+project=CalyxOS/platform_external_calyx_datura
 defaultbranch=android13
