@@ -93,11 +93,11 @@ object CommonUtils {
         )
     }
 
-    // TODO: Drop this and use ASfP or something else that doesn't requires reflection
+    // Lint complains about missing methods but they are available
     private fun getAppsInstalledForAllUsers(context: Context): List<ApplicationInfo> {
         val packages = mutableListOf<ApplicationInfo>()
         val userManager = context.getSystemService(UserManager::class.java)
-        userManager.getProfiles(getMyUserId()).forEach {
+        userManager.getProfiles(UserHandle.myUserId()).forEach {
             packages.addAll(
                 context.packageManager.getInstalledApplicationsAsUser(
                     ApplicationInfoFlags.of(PackageManager.GET_META_DATA.toLong()),
@@ -106,38 +106,5 @@ object CommonUtils {
             )
         }
         return packages
-    }
-
-    private fun getMyUserId(): Int {
-        val types = arrayOf(
-            Int::class.javaPrimitiveType
-        )
-        val method = UserHandle::class.java.getMethod("getUserId", *types)
-        val response = method.invoke(this, Process.myUid())
-        return response as Int
-    }
-
-    private fun UserManager.getProfiles(
-        userId: Int
-    ): List<UserInfo> {
-        val types = arrayOf(
-            Int::class.javaPrimitiveType
-        )
-        val method = this.javaClass.getMethod("userId", *types)
-        val response = method.invoke(this, userId)
-        return response as List<UserInfo>
-    }
-
-    private fun PackageManager.getInstalledApplicationsAsUser(
-        flags: ApplicationInfoFlags,
-        userId: Int
-    ): List<ApplicationInfo> {
-        val types = arrayOf(
-            ApplicationInfoFlags::class.java,
-            Int::class.javaPrimitiveType
-        )
-        val method = this.javaClass.getMethod("getInstalledApplicationsAsUser", *types)
-        val response = method.invoke(this, flags, userId)
-        return response as List<ApplicationInfo>
     }
 }
