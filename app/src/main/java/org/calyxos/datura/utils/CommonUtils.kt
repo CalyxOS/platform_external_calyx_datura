@@ -13,6 +13,7 @@ import android.content.pm.ApplicationInfo
 import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
 import android.content.pm.PackageManager.ApplicationInfoFlags
+import android.content.pm.PackageManager.PackageInfoFlags
 import android.os.Process
 import android.os.UserHandle
 import android.os.UserManager
@@ -92,18 +93,12 @@ object CommonUtils {
     private fun getAppsInstalledForAllUsers(context: Context): List<PackageInfo> {
         val packages = mutableListOf<PackageInfo>()
         val userManager = context.getSystemService(UserManager::class.java)
-        userManager.getProfiles(UserHandle.myUserId()).forEach { user ->
+        UserHandle.fromUserHandles(userManager.userProfiles).forEach { userID ->
             packages.addAll(
-                context.packageManager.getInstalledApplicationsAsUser(
-                    ApplicationInfoFlags.of(PackageManager.GET_META_DATA.toLong()),
-                    user.id
-                ).filter { Process.isApplicationUid(it.uid) }.map {
-                    context.packageManager.getPackageInfoAsUser(
-                        it.packageName,
-                        PackageManager.PackageInfoFlags.of(PackageManager.GET_PERMISSIONS.toLong()),
-                        user.id
-                    )
-                }
+                context.packageManager.getInstalledPackagesAsUser(
+                    PackageInfoFlags.of(PackageManager.GET_PERMISSIONS.toLong()),
+                    userID
+                ).filter { Process.isApplicationUid(it.applicationInfo.uid) }
             )
         }
         return packages
