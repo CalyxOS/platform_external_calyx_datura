@@ -10,6 +10,7 @@ import android.app.usage.UsageStats
 import android.app.usage.UsageStatsManager
 import android.content.Context
 import android.content.pm.ApplicationInfo
+import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
 import android.content.pm.PackageManager.ApplicationInfoFlags
 import android.os.Process
@@ -43,30 +44,25 @@ object CommonUtils {
 
         val usageStatsList = getUsageStats(context)
         val packageList = getAppsInstalledForAllUsers(context)
-            .filter { Process.isApplicationUid(it.uid) }
 
         packageList.forEach {
-            val pkgInfo = packageManager.getPackageInfo(
-                it.packageName,
-                PackageManager.PackageInfoFlags.of(PackageManager.GET_PERMISSIONS.toLong())
-            )
-            val systemApp = it.flags and ApplicationInfo.FLAG_SYSTEM != 0
+            val systemApp = it.applicationInfo.flags and ApplicationInfo.FLAG_SYSTEM != 0
             val requestsInternetPermission =
-                pkgInfo.requestedPermissions?.contains(Manifest.permission.INTERNET) ?: false
+                it.requestedPermissions?.contains(Manifest.permission.INTERNET) ?: false
 
             // Filter out system apps without internet permission
             // https://review.calyxos.org/c/CalyxOS/platform_packages_apps_Firewall/+/7295
             if (systemApp && !requestsInternetPermission) return@forEach
 
             val app = App(
-                it.loadLabel(packageManager).toString(),
+                it.applicationInfo.loadLabel(packageManager).toString(),
                 it.packageName,
                 packageManager.getUserBadgedIcon(
-                    it.loadIcon(packageManager),
-                    UserHandle.getUserHandleForUid(it.uid)
+                    it.applicationInfo.loadIcon(packageManager),
+                    UserHandle.getUserHandleForUid(it.applicationInfo.uid)
                 ).toBitmap(96, 96),
                 systemApp,
-                it.uid,
+                it.applicationInfo.uid,
                 requestsInternetPermission,
                 false,
                 usageStatsList.firstOrNull { u -> u.packageName == it.packageName }?.lastTimeUsed
@@ -93,15 +89,21 @@ object CommonUtils {
     }
 
     // Lint complains about missing methods but they are available
-    private fun getAppsInstalledForAllUsers(context: Context): List<ApplicationInfo> {
-        val packages = mutableListOf<ApplicationInfo>()
+    private fun getAppsInstalledForAllUsers(context: Context): List<PackageInfo> {
+        val packages = mutableListOf<PackageInfo>()
         val userManager = context.getSystemService(UserManager::class.java)
-        userManager.getProfiles(UserHandle.myUserId()).forEach {
+        userManager.getProfiles(UserHandle.myUserId()).forEach { user ->
             packages.addAll(
                 context.packageManager.getInstalledApplicationsAsUser(
                     ApplicationInfoFlags.of(PackageManager.GET_META_DATA.toLong()),
-                    it.id
-                )
+                    user.id
+                ).filter { Process.isApplicationUid(it.uid) }.map {
+                    context.packageManager.getPackageInfoAsUser(
+                        it.packageName,
+                        PackageManager.PackageInfoFlags.of(PackageManager.GET_PERMISSIONS.toLong()),
+                        user.id
+                    )
+                }
             )
         }
         return packages
