@@ -56,6 +56,9 @@ android {
     lint {
         lintConfig = file("lint.xml")
     }
+    androidResources {
+        generateLocaleConfig = true
+    }
 }
 
 kapt {
