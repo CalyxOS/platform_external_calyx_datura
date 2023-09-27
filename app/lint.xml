@@ -6,4 +6,8 @@
 <lint>
     <issue id="QueryAllPackagesPermission" severity="ignore" />
     <issue id="ProtectedPermissions" severity="ignore" />
+
+    <!-- TODO: Fix lint for external libraries -->
+    <!-- Lint cannot see external library methods (android/libcore.jar) -->
+    <issue id="MissingPermission" severity="ignore" />
 </lint>
