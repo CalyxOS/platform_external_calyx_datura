@@ -30,8 +30,11 @@ object CommonUtils {
         val daturaItemList = mutableListOf<DaturaItem>()
 
         daturaItemList.apply {
-            add(0, Header(context.getString(R.string.installed_apps)))
-            addAll(appList.filter { !it.systemApp })
+            // User app list can be empty, showing just the header looks bad
+            if (appList.any { !it.systemApp }) {
+                add(0, Header(context.getString(R.string.installed_apps)))
+                addAll(appList.filter { !it.systemApp })
+            }
             add(size, Header(context.getString(R.string.system_apps)))
             addAll(appList.filter { it.systemApp })
         }
