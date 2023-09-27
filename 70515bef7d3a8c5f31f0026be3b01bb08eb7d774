@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "000ba402_6bf975de",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000065
+      },
+      "writtenOn": "2023-09-27T16:25:11Z",
+      "side": 1,
+      "message": "Tested on Android Studio with 4a as well as higher DPI on 6a",
+      "revId": "70515bef7d3a8c5f31f0026be3b01bb08eb7d774",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
