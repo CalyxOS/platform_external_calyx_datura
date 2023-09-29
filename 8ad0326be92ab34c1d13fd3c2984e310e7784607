@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f47b81bb_a6a8cab2",
+        "filename": "app/src/main/res/values/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-09-29T20:03:31Z",
+      "side": 1,
+      "message": "Need better string, suggestions?\n\nThis does fit FWIW (i.e. it sanely flows over to the next line)",
+      "revId": "8ad0326be92ab34c1d13fd3c2984e310e7784607",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
