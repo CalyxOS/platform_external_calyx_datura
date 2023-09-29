@@ -221,7 +221,7 @@ class AppListRVAdapter @Inject constructor(
                     settingsMode.text = context.getString(R.string.custom_settings)
                 }
             } else {
-                settingsMode.text = String()
+                settingsMode.text = context.getString(R.string.no_internet)
             }
         }
     }

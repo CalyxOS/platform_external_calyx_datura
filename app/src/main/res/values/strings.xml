@@ -11,6 +11,7 @@
     <string name="searchbar_hint">Search for apps</string>
     <string name="default_settings">Default settings</string>
     <string name="custom_settings">Custom settings</string>
+    <string name="no_internet">App does not ask for internet permission</string>
 
     <string name="allow_background_data">Allow background network access</string>
     <string name="allow_wifi_data">Allow Wi-Fi data</string>
