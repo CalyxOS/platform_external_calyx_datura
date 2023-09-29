@@ -52,6 +52,24 @@
       "parentUuid": "2086e7f6_4ed631d7",
       "revId": "6d62e53ad9f35538d121a00dfb417dd21c39af18",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "161c615d_5b22b891",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000065
+      },
+      "writtenOn": "2023-09-29T20:03:12Z",
+      "side": 1,
+      "message": "Yes, reproducable when the app with no internet permission is visible on app\u0027s startup (its the only app I have installed on device right now)",
+      "parentUuid": "66018db9_3494b747",
+      "revId": "6d62e53ad9f35538d121a00dfb417dd21c39af18",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
