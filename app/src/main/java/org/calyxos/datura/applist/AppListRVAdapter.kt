@@ -190,18 +190,14 @@ class AppListRVAdapter @Inject constructor(
         }
     }
 
-    private fun expandLayout(rootView: View, expand: Boolean, canExpand: Boolean) {
+    private fun expandLayout(rootView: View, expand: Boolean, reqInternetPerm: Boolean) {
         rootView.apply {
             val expandButton = findViewById<MaterialButton>(R.id.expandButton)
-            expandButton.isClickable = false
-
-            if (!canExpand) {
-                // This view can't be expanded, remove drop down arrow and exit
-                expandButton.isEnabled = false
-                return
+            expandButton.apply {
+                isEnabled = reqInternetPerm
+                isClickable = reqInternetPerm
             }
 
-            expandButton.isEnabled = true
             findViewById<LinearLayout>(R.id.expandLayout).apply {
                 if (!expand) {
                     expandButton.icon = ContextCompat.getDrawable(context, R.drawable.ic_arrow_down)
