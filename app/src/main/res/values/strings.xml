@@ -33,4 +33,6 @@
     <string name="contributing_orgs_title">Contributing Organizations</string>
     <string name="contributing_orgs_summary"><a href="https://www.calyxinstitute.org">Calyx Institute</a> for use in <a href="https://calyxos.org">CalyxOS</a></string>
 
+    <!-- Work Fragment -->
+    <string name="work_profile_help">Firewall settings for work apps are managed in your personal profile’s Firewall app. Work apps have a briefcase icon on them.</string>
 </resources>

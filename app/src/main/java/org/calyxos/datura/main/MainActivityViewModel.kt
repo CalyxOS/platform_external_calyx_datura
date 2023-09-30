@@ -12,8 +12,10 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import org.calyxos.datura.R
 import org.calyxos.datura.models.App
 import org.calyxos.datura.models.DaturaItem
+import org.calyxos.datura.models.Header
 import org.calyxos.datura.models.Sort
 import org.calyxos.datura.models.Type
 import org.calyxos.datura.utils.CommonUtils
@@ -52,6 +54,11 @@ class MainActivityViewModel @Inject constructor(
                 val systemHeader = this.indexOfLast { it.type == Type.HEADER }
 
                 // Installed apps
+                // User app list can be empty, showing just the header looks bad
+                if (this.any { !it.systemApp }) {
+                    add(0, Header(context.getString(R.string.installed_apps)))
+                    addAll(appList.filter { !it.systemApp })
+                }
                 subList(1, systemHeader - 1).sortByDescending { a -> (a as App).lastTimeUsed }
 
                 // System apps
