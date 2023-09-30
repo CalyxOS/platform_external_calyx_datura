@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8edc9bdc_8fa2d7aa",
+        "filename": "app/src/main/res/values/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000065
+      },
+      "writtenOn": "2023-09-30T11:40:52Z",
+      "side": 1,
+      "message": "How about:\n\n```\nTo manage network for work profile apps, switch to Datura Firewall \\\u0027s personal profile and look for apps with briefcase badge\n```",
+      "revId": "926687effcb61189cf5beba5eea5ca31c36fcbb4",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
