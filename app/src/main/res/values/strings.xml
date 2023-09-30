@@ -33,4 +33,7 @@
     <string name="contributing_orgs_title">Contributing Organizations</string>
     <string name="contributing_orgs_summary"><a href="https://www.calyxinstitute.org">Calyx Institute</a> for use in <a href="https://calyxos.org">CalyxOS</a></string>
 
+    <!-- Work Fragment -->
+    <string name="existing_work_profile">Work profile</string>
+    <string name="existing_work_profile_help">To manage work profile apps, switch to personal profile and look for apps with briefcase badge.</string>
 </resources>
