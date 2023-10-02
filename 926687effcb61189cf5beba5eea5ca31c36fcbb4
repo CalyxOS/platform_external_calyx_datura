@@ -1,6 +1,57 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c61ef275_a5c7d071",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-10-02T21:26:33Z",
+      "side": 1,
+      "message": "Minor nits, will do for now.",
+      "revId": "926687effcb61189cf5beba5eea5ca31c36fcbb4",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d66073b5_38321704",
+        "filename": "app/src/main/res/layout/fragment_work.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-10-02T21:26:33Z",
+      "side": 1,
+      "message": "Have this be the firewall app logo instead",
+      "revId": "926687effcb61189cf5beba5eea5ca31c36fcbb4",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c6b5f685_fa9c2c19",
+        "filename": "app/src/main/res/values/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-10-02T21:26:33Z",
+      "side": 1,
+      "message": "Firewall",
+      "revId": "926687effcb61189cf5beba5eea5ca31c36fcbb4",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "8edc9bdc_8fa2d7aa",
@@ -14,6 +65,24 @@
       "writtenOn": "2023-09-30T11:40:52Z",
       "side": 1,
       "message": "How about:\n\n```\nTo manage network for work profile apps, switch to Datura Firewall \\\u0027s personal profile and look for apps with briefcase badge\n```",
+      "revId": "926687effcb61189cf5beba5eea5ca31c36fcbb4",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f4e649da_f6b420cd",
+        "filename": "app/src/main/res/values/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-10-02T21:26:33Z",
+      "side": 1,
+      "message": "To control the firewall for work profile apps, switch to the Firewall app in the personal profile, and look for apps with a briefcase badge.",
+      "parentUuid": "8edc9bdc_8fa2d7aa",
       "revId": "926687effcb61189cf5beba5eea5ca31c36fcbb4",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
