@@ -16,6 +16,24 @@
       "message": "Need better string, suggestions?\n\nThis does fit FWIW (i.e. it sanely flows over to the next line)",
       "revId": "8ad0326be92ab34c1d13fd3c2984e310e7784607",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3fe92a59_ec317cb6",
+        "filename": "app/src/main/res/values/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-10-03T12:57:22Z",
+      "side": 1,
+      "message": "Shipping for now, can always re-work later. Translations aren\u0027t up yet anyways so it won\u0027t be painful either.",
+      "parentUuid": "f47b81bb_a6a8cab2",
+      "revId": "8ad0326be92ab34c1d13fd3c2984e310e7784607",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
