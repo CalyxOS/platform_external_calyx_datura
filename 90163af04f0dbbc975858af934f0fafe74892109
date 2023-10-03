@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5d3247a8_ed4cdcb7",
+        "filename": "app/src/main/java/org/calyxos/datura/main/MainActivityViewModel.kt",
+        "patchSetId": 2
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-10-03T12:59:26Z",
+      "side": 1,
+      "message": "Not related to this change, doesn\u0027t compile (`can\u0027t find systemApp). Taken out, resubmit as separate commit.",
+      "revId": "90163af04f0dbbc975858af934f0fafe74892109",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
