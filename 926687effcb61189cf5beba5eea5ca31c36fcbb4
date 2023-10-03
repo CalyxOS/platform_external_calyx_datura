@@ -35,6 +35,24 @@
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "22b01946_7eace295",
+        "filename": "app/src/main/res/layout/fragment_work.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000065
+      },
+      "writtenOn": "2023-10-03T05:18:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d66073b5_38321704",
+      "revId": "926687effcb61189cf5beba5eea5ca31c36fcbb4",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c6b5f685_fa9c2c19",
@@ -119,6 +137,24 @@
       "side": 1,
       "message": "It\u0027s long, and also has too many \"the\"s.",
       "parentUuid": "f4e649da_f6b420cd",
+      "revId": "926687effcb61189cf5beba5eea5ca31c36fcbb4",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d420b78d_a6985ce6",
+        "filename": "app/src/main/res/values/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000065
+      },
+      "writtenOn": "2023-10-03T05:18:00Z",
+      "side": 1,
+      "message": "Reworked",
+      "parentUuid": "b5a4bfa9_9dc7b1ad",
       "revId": "926687effcb61189cf5beba5eea5ca31c36fcbb4",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
