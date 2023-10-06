@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "65c93361_46077e50",
+        "filename": "app/src/main/res/values/colors.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000065
+      },
+      "writtenOn": "2023-10-06T20:29:30Z",
+      "side": 0,
+      "message": "Under the hood: https://gitlab.com/CalyxOS/platform_frameworks_base/-/blob/android13/core/res/res/values/colors_device_defaults.xml#L35",
+      "revId": "f32eb9b09bdd776cf981eba071365f6e4b2c8d09",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
