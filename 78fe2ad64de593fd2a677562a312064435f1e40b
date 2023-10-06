@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d94b2650_ffc75059",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-10-06T20:29:58Z",
+      "side": 1,
+      "message": "I moved to 14 because given that this is a gradle app, we can just maintain it here in the android14 branch for both 13 and 14 until there\u0027s an issue.\n\nThe prebuilts could go to the right branch.",
+      "revId": "78fe2ad64de593fd2a677562a312064435f1e40b",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
