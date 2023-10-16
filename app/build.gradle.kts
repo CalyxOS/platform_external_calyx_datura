@@ -6,7 +6,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    id("org.jetbrains.kotlin.kapt")
+    id("com.google.devtools.ksp")
     id("com.google.dagger.hilt.android")
     id("org.jlleitschuh.gradle.ktlint")
 }
@@ -62,10 +62,6 @@ android {
     }
 }
 
-kapt {
-    correctErrorTypes = true
-}
-
 hilt {
     enableAggregatingTask = false
 }
@@ -92,6 +88,6 @@ dependencies {
 
     // Hilt
     val hiltVersion = "2.48.1"
-    kapt("com.google.dagger:hilt-compiler:$hiltVersion")
+    ksp("com.google.dagger:hilt-compiler:$hiltVersion")
     implementation("com.google.dagger:hilt-android:$hiltVersion")
 }
