@@ -13,12 +13,12 @@ plugins {
 
 android {
     namespace = "org.calyxos.datura"
-    compileSdk = 33
+    compileSdk = 34
 
     defaultConfig {
         applicationId = "org.calyxos.datura"
         minSdk = 33
-        targetSdk = 33
+        targetSdk = 34
         versionCode = 33000001
         versionName = "13-2.0"
 
