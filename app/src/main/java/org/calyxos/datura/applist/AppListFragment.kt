@@ -5,6 +5,7 @@
 
 package org.calyxos.datura.applist
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.activity.addCallback
@@ -20,6 +21,8 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import org.calyxos.datura.R
 import org.calyxos.datura.main.MainActivityViewModel
+import org.calyxos.datura.models.App
+import org.calyxos.datura.models.DaturaItem
 import org.calyxos.datura.models.Sort
 import javax.inject.Inject
 
@@ -37,12 +40,20 @@ class AppListFragment : Hilt_AppListFragment(R.layout.fragment_app_list) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        // Get target UID if provided to activity, e.g. by link in Settings
+        val uid: Int = activity?.intent?.getIntExtra(Intent.EXTRA_UID, -1) ?: -1
+
         // Recycler View
-        viewLifecycleOwner.lifecycleScope.launch {
-            viewModel.appList.collect { appListRVAdapter.submitList(it) }
-        }
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView).apply {
             adapter = appListRVAdapter
+        }
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.appList.collect { list ->
+                appListRVAdapter.submitList(list)
+                if (uid != -1) {
+                    scrollToAndExpandUid(recyclerView, uid, list)
+                }
+            }
         }
 
         // Search View
@@ -88,6 +99,27 @@ class AppListFragment : Hilt_AppListFragment(R.layout.fragment_app_list) {
             } else {
                 activity?.finish()
             }
+        }
+    }
+
+    private fun scrollToAndExpandUid(recyclerView: RecyclerView, uid: Int, list: List<DaturaItem>) {
+        var foundApp: App? = null
+        val uidPosition: Int = list.withIndex().firstOrNull { indexedItem ->
+            if (indexedItem.value is App) {
+                val app: App = (indexedItem.value as App)
+                if (app.uid == uid) {
+                    foundApp = app
+                    true
+                } else {
+                    false
+                }
+            } else {
+                false
+            }
+        }?.index ?: -1
+        if (uidPosition != -1) {
+            foundApp?.isExpanded = true
+            recyclerView.scrollToPosition(uidPosition)
         }
     }
 }
