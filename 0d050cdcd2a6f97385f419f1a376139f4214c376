@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "84ab80b1_7dd1b039",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000065
+      },
+      "writtenOn": "2023-12-12T07:38:32Z",
+      "side": 1,
+      "message": "I feel there might be some kotlin extension function that would do this job but I am not sure. Looks good to me otherwise. ",
+      "revId": "0d050cdcd2a6f97385f419f1a376139f4214c376",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
