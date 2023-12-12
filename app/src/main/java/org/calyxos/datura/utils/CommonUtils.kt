@@ -13,9 +13,11 @@ import android.content.pm.ApplicationInfo
 import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
 import android.content.pm.PackageManager.PackageInfoFlags
+import android.graphics.Bitmap
 import android.os.Process
 import android.os.UserHandle
 import android.os.UserManager
+import android.util.Log
 import androidx.core.graphics.drawable.toBitmap
 import org.calyxos.datura.R
 import org.calyxos.datura.models.App
@@ -24,6 +26,8 @@ import org.calyxos.datura.models.Header
 import java.util.Calendar
 
 object CommonUtils {
+
+    val TAG = "CommonUtils"
 
     fun getAllPackagesWithHeader(context: Context): List<DaturaItem> {
         val appList = getAllPackages(context).toMutableList()
@@ -57,10 +61,7 @@ object CommonUtils {
             val app = App(
                 it.applicationInfo.loadLabel(packageManager).toString(),
                 it.packageName,
-                packageManager.getUserBadgedIcon(
-                    it.applicationInfo.loadIcon(packageManager),
-                    UserHandle.getUserHandleForUid(it.applicationInfo.uid)
-                ).toBitmap(96, 96),
+                getIconForPackage(packageManager, it),
                 systemApp,
                 it.applicationInfo.uid,
                 requestsInternetPermission,
@@ -73,6 +74,21 @@ object CommonUtils {
 
         applicationList.sortWith(compareBy(String.CASE_INSENSITIVE_ORDER) { it.name })
         return applicationList
+    }
+
+    private fun getIconForPackage(
+        packageManager: PackageManager,
+        packageInfo: PackageInfo
+    ): Bitmap {
+        val icon = packageInfo.applicationInfo.loadIcon(packageManager)
+        val userHandle = UserHandle.getUserHandleForUid(packageInfo.applicationInfo.uid)
+        val badgedIcon = if (icon.intrinsicWidth > 0 && icon.intrinsicHeight > 0) {
+            packageManager.getUserBadgedIcon(icon, userHandle)
+        } else {
+            Log.w(TAG, "Using default activity icon for ${packageInfo.packageName}")
+            packageManager.getUserBadgedIcon(packageManager.defaultActivityIcon, userHandle)
+        }
+        return badgedIcon.toBitmap(96, 96)
     }
 
     private fun getUsageStats(context: Context): List<UsageStats> {
