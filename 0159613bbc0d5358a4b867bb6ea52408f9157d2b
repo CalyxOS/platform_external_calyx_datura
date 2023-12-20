@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8e4b57a0_da6879e0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000065
+      },
+      "writtenOn": "2023-12-20T14:56:28Z",
+      "side": 1,
+      "message": "While the request was just for cellular toggle, I thought to guard wifi too just in case",
+      "revId": "0159613bbc0d5358a4b867bb6ea52408f9157d2b",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
