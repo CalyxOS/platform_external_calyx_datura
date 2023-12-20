@@ -16,6 +16,23 @@
       "message": "While the request was just for cellular toggle, I thought to guard wifi too just in case",
       "revId": "0159613bbc0d5358a4b867bb6ea52408f9157d2b",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "529fbbdd_0cc5449b",
+        "filename": "app/src/main/java/org/calyxos/datura/applist/AppListRVAdapter.kt",
+        "patchSetId": 1
+      },
+      "lineNbr": 216,
+      "author": {
+        "id": 1000065
+      },
+      "writtenOn": "2023-12-20T15:02:50Z",
+      "side": 1,
+      "message": "It should be fine to not unhide them when view gets collapsed as I doubt features will go missing from the device.",
+      "revId": "0159613bbc0d5358a4b867bb6ea52408f9157d2b",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
