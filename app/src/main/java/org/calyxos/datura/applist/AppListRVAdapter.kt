@@ -5,6 +5,7 @@
 
 package org.calyxos.datura.applist
 
+import android.content.pm.PackageManager
 import android.net.NetworkPolicyManager
 import android.net.NetworkPolicyManager.POLICY_REJECT_ALL
 import android.net.NetworkPolicyManager.POLICY_REJECT_CELLULAR
@@ -205,6 +206,15 @@ class AppListRVAdapter @Inject constructor(
                 } else {
                     expandButton.icon = ContextCompat.getDrawable(context, R.drawable.ic_arrow_up)
                     this.visibility = View.VISIBLE
+
+                    // Show specific rows only if device has that feature
+                    val packageManager = rootView.context.packageManager
+                    if (packageManager.hasSystemFeature(PackageManager.FEATURE_WIFI)) {
+                        findViewById<LinearLayout>(R.id.wifiLayout).visibility = View.VISIBLE
+                    }
+                    if (packageManager.hasSystemFeature(PackageManager.FEATURE_TELEPHONY)) {
+                        findViewById<LinearLayout>(R.id.mobileLayout).visibility = View.VISIBLE
+                    }
                 }
             }
         }
