@@ -15,46 +15,51 @@ import android.view.View
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.google.android.material.appbar.MaterialToolbar
 import org.calyxos.datura.R
+import org.calyxos.datura.databinding.FragmentAboutBinding
 
 class AboutFragment : Fragment(R.layout.fragment_about) {
 
+    private var _binding: FragmentAboutBinding? = null
+    private val binding get() = _binding!!
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        _binding = FragmentAboutBinding.bind(view)
 
         // Toolbar
-        view.findViewById<MaterialToolbar>(R.id.toolbar).setNavigationOnClickListener {
+        binding.toolbar.setNavigationOnClickListener {
             findNavController().navigateUp()
         }
 
         // Version
-        view.apply {
-            val packageInfo = context.packageManager.getPackageInfo(
-                context.packageName,
-                PackageManager.PackageInfoFlags.of(0)
-            )
-            findViewById<TextView>(R.id.appVersion).text = getString(
-                R.string.version,
-                packageInfo.versionName
-            )
-        }
+        val packageInfo = requireContext().packageManager.getPackageInfo(
+            requireContext().packageName,
+            PackageManager.PackageInfoFlags.of(0)
+        )
+        binding.appVersion.text = getString(
+            R.string.version,
+            packageInfo.versionName
+        )
 
         // Make required views clickable
         val linkViews = listOf(
-            R.id.contributors_desc,
-            R.id.contributing_orgs_desc,
-            R.id.license
+            binding.contributorsDesc,
+            binding.contributingOrgsDesc,
+            binding.license
         )
-        view.apply {
-            linkViews.forEach {
-                findViewById<TextView>(it).apply {
-                    movementMethod = LinkMovementMethod.getInstance()
-                    isClickable = true
-                    removeUnderlineFromLinks()
-                }
+        linkViews.forEach {
+            it.apply {
+                movementMethod = LinkMovementMethod.getInstance()
+                isClickable = true
+                removeUnderlineFromLinks()
             }
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     private fun TextView.removeUnderlineFromLinks() {

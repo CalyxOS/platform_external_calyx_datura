@@ -9,16 +9,20 @@ import android.content.ComponentName
 import android.content.pm.CrossProfileApps
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
 import androidx.fragment.app.Fragment
 import org.calyxos.datura.R
+import org.calyxos.datura.databinding.FragmentWorkBinding
 
 class WorkFragment : Fragment(R.layout.fragment_work) {
 
+    private var _binding: FragmentWorkBinding? = null
+    private val binding get() = _binding!!
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        _binding = FragmentWorkBinding.bind(view)
 
-        view.findViewById<Button>(R.id.switchProfile).apply {
+        binding.switchProfile.apply {
             val crossProfileApps = view.context.getSystemService(CrossProfileApps::class.java)
             val targetUser = crossProfileApps.targetUserProfiles.first()
 
@@ -33,5 +37,10 @@ class WorkFragment : Fragment(R.layout.fragment_work) {
                 )
             }
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
