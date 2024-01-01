@@ -15,11 +15,10 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.search.SearchBar
-import com.google.android.material.search.SearchView
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import org.calyxos.datura.R
+import org.calyxos.datura.databinding.FragmentAppListBinding
 import org.calyxos.datura.main.MainActivityViewModel
 import org.calyxos.datura.models.App
 import org.calyxos.datura.models.DaturaItem
@@ -28,6 +27,9 @@ import javax.inject.Inject
 
 @AndroidEntryPoint(Fragment::class)
 class AppListFragment : Hilt_AppListFragment(R.layout.fragment_app_list) {
+
+    private var _binding: FragmentAppListBinding? = null
+    private val binding get() = _binding!!
 
     private val viewModel: MainActivityViewModel by activityViewModels()
 
@@ -39,28 +41,24 @@ class AppListFragment : Hilt_AppListFragment(R.layout.fragment_app_list) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        _binding = FragmentAppListBinding.bind(view)
 
         // Get target UID if provided to activity, e.g. by link in Settings
         val uid: Int = activity?.intent?.getIntExtra(Intent.EXTRA_UID, -1) ?: -1
 
         // Recycler View
-        val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView).apply {
-            adapter = appListRVAdapter
-        }
+        binding.recyclerView.adapter = appListRVAdapter
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.appList.collect { list ->
                 appListRVAdapter.submitList(list)
                 if (uid != -1) {
-                    scrollToAndExpandUid(recyclerView, uid, list)
+                    scrollToAndExpandUid(binding.recyclerView, uid, list)
                 }
             }
         }
 
         // Search View
-        val searchView = view.findViewById<SearchView>(R.id.searchView)
-        val searchBar = view.findViewById<SearchBar>(R.id.searchBar)
-
-        searchBar.apply {
+        binding.searchBar.apply {
             inflateMenu(R.menu.menu_main)
             setOnMenuItemClickListener {
                 when (it.itemId) {
@@ -70,12 +68,12 @@ class AppListFragment : Hilt_AppListFragment(R.layout.fragment_app_list) {
                     R.id.sort -> {
                         if (viewModel.sort == Sort.NAME) {
                             viewModel.sortAppList(Sort.LAST_USED)
-                            recyclerView.post { recyclerView.scrollToPosition(0) }
+                            binding.recyclerView.post { binding.recyclerView.scrollToPosition(0) }
                             it.title = getString(R.string.sort_by_name)
                             viewModel.sort = Sort.LAST_USED
                         } else {
                             viewModel.sortAppList(Sort.NAME)
-                            recyclerView.post { recyclerView.scrollToPosition(0) }
+                            binding.recyclerView.post { binding.recyclerView.scrollToPosition(0) }
                             it.title = getString(R.string.sort_by_last_used)
                             viewModel.sort = Sort.NAME
                         }
@@ -85,21 +83,26 @@ class AppListFragment : Hilt_AppListFragment(R.layout.fragment_app_list) {
             }
         }
 
-        searchView.setupWithSearchBar(searchBar)
-        view.findViewById<RecyclerView>(R.id.searchRecyclerView).adapter = searchAppListRVAdapter
+        binding.searchView.setupWithSearchBar(binding.searchBar)
+        binding.searchRecyclerView.adapter = searchAppListRVAdapter
 
-        searchView.editText.addTextChangedListener {
+        binding.searchView.editText.addTextChangedListener {
             searchAppListRVAdapter.submitList(viewModel.getFilteredAppList(it.toString()))
         }
 
         // Handle back press when search view is visible
         activity?.onBackPressedDispatcher?.addCallback(this) {
-            if (searchView.isShowing) {
-                searchView.hide()
+            if (binding.searchView.isShowing) {
+                binding.searchView.hide()
             } else {
                 activity?.finish()
             }
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 
     private fun scrollToAndExpandUid(recyclerView: RecyclerView, uid: Int, list: List<DaturaItem>) {

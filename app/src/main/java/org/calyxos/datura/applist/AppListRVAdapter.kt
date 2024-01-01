@@ -15,8 +15,6 @@ import android.net.NetworkPolicyManager.POLICY_REJECT_WIFI
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.toDrawable
@@ -24,9 +22,10 @@ import androidx.core.view.isVisible
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.google.android.material.button.MaterialButton
 import com.google.android.material.materialswitch.MaterialSwitch
 import org.calyxos.datura.R
+import org.calyxos.datura.databinding.RecyclerViewAppListBinding
+import org.calyxos.datura.databinding.RecyclerViewHeaderListBinding
 import org.calyxos.datura.models.App
 import org.calyxos.datura.models.DaturaItem
 import org.calyxos.datura.models.Header
@@ -39,8 +38,11 @@ class AppListRVAdapter @Inject constructor(
     private val networkPolicyManager: NetworkPolicyManager
 ) : ListAdapter<DaturaItem, RecyclerView.ViewHolder>(daturaItemDiffUtil) {
 
-    inner class AppViewHolder(val view: View) : RecyclerView.ViewHolder(view)
-    inner class HeaderViewHolder(val view: View) : RecyclerView.ViewHolder(view)
+    inner class AppViewHolder(val binding: RecyclerViewAppListBinding) :
+        RecyclerView.ViewHolder(binding.root)
+
+    inner class HeaderViewHolder(val binding: RecyclerViewHeaderListBinding) :
+        RecyclerView.ViewHolder(binding.root)
 
     @Singleton
     class DaturaItemDiffUtil @Inject constructor() : DiffUtil.ItemCallback<DaturaItem>() {
@@ -85,14 +87,21 @@ class AppListRVAdapter @Inject constructor(
         return when (viewType) {
             Type.APP.ordinal -> {
                 AppViewHolder(
-                    LayoutInflater.from(parent.context)
-                        .inflate(R.layout.recycler_view_app_list, parent, false)
+                    RecyclerViewAppListBinding.inflate(
+                        LayoutInflater.from(parent.context),
+                        parent,
+                        false
+                    )
                 )
             }
+
             else -> {
                 HeaderViewHolder(
-                    LayoutInflater.from(parent.context)
-                        .inflate(R.layout.recycler_view_header_list, parent, false)
+                    RecyclerViewHeaderListBinding.inflate(
+                        LayoutInflater.from(parent.context),
+                        parent,
+                        false
+                    )
                 )
             }
         }
@@ -112,32 +121,31 @@ class AppListRVAdapter @Inject constructor(
 
     private fun onBindHeaderViewHolder(holder: HeaderViewHolder, position: Int) {
         val header = getItem(position) as Header
-
-        holder.view.findViewById<TextView>(R.id.header).text = header.name
+        holder.binding.header.text = header.name
     }
 
     private fun onBindAppViewHolder(holder: AppViewHolder, position: Int) {
         val app = getItem(position) as App
 
         // Map of switches to their policy
-        val mapOfViewAndPolicy = mapOf(
-            R.id.mainSwitch to POLICY_REJECT_ALL,
-            R.id.backgroundSwitch to POLICY_REJECT_METERED_BACKGROUND,
-            R.id.wifiSwitch to POLICY_REJECT_WIFI,
-            R.id.mobileSwitch to POLICY_REJECT_CELLULAR,
-            R.id.vpnSwitch to POLICY_REJECT_VPN
+        val mapOfSwitchAndPolicy = mapOf(
+            holder.binding.mainSwitch to POLICY_REJECT_ALL,
+            holder.binding.expandLayout.backgroundSwitch to POLICY_REJECT_METERED_BACKGROUND,
+            holder.binding.expandLayout.wifiSwitch to POLICY_REJECT_WIFI,
+            holder.binding.expandLayout.mobileSwitch to POLICY_REJECT_CELLULAR,
+            holder.binding.expandLayout.vpnSwitch to POLICY_REJECT_VPN
         )
 
-        holder.view.apply {
-            findViewById<ImageView>(R.id.appIcon).background = app.icon.toDrawable(resources)
-            findViewById<TextView>(R.id.appName).text = app.name
+        holder.binding.apply {
+            appIcon.background = app.icon.toDrawable(holder.binding.rootView.resources)
+            appName.text = app.name
 
             // Expand layout on root view click
-            expandLayout(holder.view, app.isExpanded, app.requestsInternetPermission)
-            setOnClickListener {
+            expandLayout(this, app.isExpanded, app.requestsInternetPermission)
+            rootView.setOnClickListener {
                 if (it.isVisible && app.requestsInternetPermission) {
                     (currentList[holder.adapterPosition] as App).isExpanded = !app.isExpanded
-                    expandLayout(holder.view, app.isExpanded, true)
+                    expandLayout(this, app.isExpanded, true)
                 }
             }
 
@@ -145,12 +153,12 @@ class AppListRVAdapter @Inject constructor(
             val mainSwitchEnabled =
                 (networkPolicyManager.getUidPolicy(app.uid) and POLICY_REJECT_ALL) == 0
 
-            mapOfViewAndPolicy.forEach { (viewID, policy) ->
-                findViewById<MaterialSwitch>(viewID).apply {
+            mapOfSwitchAndPolicy.forEach { (switch, policy) ->
+                switch.apply {
                     setOnCheckedChangeListener(null)
 
                     // Ensure main switch is enabled before enabling child switches
-                    isEnabled = if (viewID == R.id.mainSwitch) {
+                    isEnabled = if (switch == mainSwitch) {
                         app.requestsInternetPermission
                     } else {
                         app.requestsInternetPermission && mainSwitchEnabled
@@ -169,17 +177,16 @@ class AppListRVAdapter @Inject constructor(
                             }
 
                             // Disable/Enable child buttons if main switch was toggled
-                            if (viewID == R.id.mainSwitch) {
-                                mapOfViewAndPolicy.filter { it.key != R.id.mainSwitch }.forEach {
-                                    holder.view.findViewById<MaterialSwitch>(it.key).isEnabled =
-                                        isChecked
+                            if (switch == mainSwitch) {
+                                mapOfSwitchAndPolicy.filter { it.key != mainSwitch }.forEach {
+                                    it.key.isEnabled = isChecked
                                 }
                             }
 
                             // Reflect appropriate settings status
                             updateSettingsText(
-                                holder.view,
-                                mapOfViewAndPolicy.keys,
+                                settingsMode,
+                                mapOfSwitchAndPolicy.keys,
                                 app.requestsInternetPermission
                             )
                         }
@@ -187,52 +194,62 @@ class AppListRVAdapter @Inject constructor(
                 }
             }
 
-            updateSettingsText(this, mapOfViewAndPolicy.keys, app.requestsInternetPermission)
+            updateSettingsText(
+                settingsMode,
+                mapOfSwitchAndPolicy.keys,
+                app.requestsInternetPermission
+            )
         }
     }
 
-    private fun expandLayout(rootView: View, expand: Boolean, reqInternetPerm: Boolean) {
-        rootView.apply {
-            val expandButton = findViewById<MaterialButton>(R.id.expandButton)
+    private fun expandLayout(
+        binding: RecyclerViewAppListBinding,
+        expand: Boolean,
+        reqInternetPerm: Boolean
+    ) {
+        binding.apply {
             expandButton.apply {
                 isEnabled = reqInternetPerm
                 isClickable = false // Keep false, consumes touch event otherwise
             }
 
-            findViewById<LinearLayout>(R.id.expandLayout).apply {
+            binding.expandLayout.apply {
                 if (!expand) {
-                    expandButton.icon = ContextCompat.getDrawable(context, R.drawable.ic_arrow_down)
-                    this.visibility = View.GONE
+                    expandButton.icon =
+                        ContextCompat.getDrawable(rootView.context, R.drawable.ic_arrow_down)
+                    rootView.visibility = View.GONE
                 } else {
-                    expandButton.icon = ContextCompat.getDrawable(context, R.drawable.ic_arrow_up)
-                    this.visibility = View.VISIBLE
+                    expandButton.icon =
+                        ContextCompat.getDrawable(binding.rootView.context, R.drawable.ic_arrow_up)
+                    rootView.visibility = View.VISIBLE
 
                     // Show specific rows only if device has that feature
                     val packageManager = rootView.context.packageManager
                     if (packageManager.hasSystemFeature(PackageManager.FEATURE_WIFI)) {
-                        findViewById<LinearLayout>(R.id.wifiLayout).visibility = View.VISIBLE
+                        wifiLayout.visibility = View.VISIBLE
                     }
                     if (packageManager.hasSystemFeature(PackageManager.FEATURE_TELEPHONY)) {
-                        findViewById<LinearLayout>(R.id.mobileLayout).visibility = View.VISIBLE
+                        mobileLayout.visibility = View.VISIBLE
                     }
                 }
             }
         }
     }
 
-    private fun updateSettingsText(rootView: View, switches: Set<Int>, reqInternetPerm: Boolean) {
-        rootView.apply {
-            val settingsMode = findViewById<TextView>(R.id.settingsMode)
-
-            if (reqInternetPerm) {
-                if (switches.all { findViewById<MaterialSwitch>(it).isChecked }) {
-                    settingsMode.text = context.getString(R.string.default_settings)
-                } else {
-                    settingsMode.text = context.getString(R.string.custom_settings)
-                }
+    private fun updateSettingsText(
+        settingsMode: TextView,
+        switches: Set<MaterialSwitch>,
+        reqInternetPerm: Boolean
+    ) {
+        val context = settingsMode.context
+        if (reqInternetPerm) {
+            if (switches.all { it.isChecked }) {
+                settingsMode.text = context.getString(R.string.default_settings)
             } else {
-                settingsMode.text = context.getString(R.string.no_internet)
+                settingsMode.text = context.getString(R.string.custom_settings)
             }
+        } else {
+            settingsMode.text = context.getString(R.string.no_internet)
         }
     }
 }
