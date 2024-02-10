@@ -12,4 +12,16 @@
     <string name="app_name">Firewall Datura</string>
     <string name="allow_mobile_data">Permitir datos móviles</string>
     <string name="about_summary">Una aplicación de firewall que utiliza la API de red interna de Android.</string>
+    <string name="default_settings">Ajustes por defecto</string>
+    <string name="app_logo">Logotipo de la aplicación</string>
+    <string name="no_internet">La aplicación no pide permiso para conectarse a Internet</string>
+    <string name="about_foss">Está licenciado y distribuido bajo la <a href="https://www.apache.org/licenses/LICENSE-2.0">Licencia Apache 2.0</a>. Consulte los archivos para obtener información sobre los titulares de los derechos de autor.</string>
+    <string name="contributing_orgs_title">Organizaciones colaboradoras</string>
+    <string name="contributing_orgs_summary"><a href="https://www.calyxinstitute.org">Instituto Calyx</a> para su uso en <a href="https://calyxos.org">CalyxOS</a></string>
+    <string name="searchbar_hint">Buscar aplicaciones</string>
+    <string name="custom_settings">Ajustes personalizados</string>
+    <string name="version">Versión: &lt;xliff:g id=\"version\"&gt;%1$s&lt;/xliff:g&gt;</string>
+    <string name="contributors_title">Colaboradores</string>
+    <string name="contributors_summary">Por favor, consulte Github la <a href="https://gitlab.com/CalyxOS/platform_packages_apps_Datura/-/graphs/android13">lista de colaboradores</a>.</string>
+    <string name="work_profile_help">La configuración del cortafuegos para las aplicaciones de trabajo se gestiona en la aplicación Cortafuegos de tu perfil personal. Las aplicaciones de trabajo tienen un icono en forma de maletín.</string>
 </resources>

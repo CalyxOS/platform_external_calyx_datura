@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_short_name">Τείχος προστασίας</string>
     <string name="allow_vpn_data">Να επιτρέπονται δεδομένα VPN</string>
     <string name="sort_by_last_used">Ταξινόμηση κατά την τελευταία χρήση</string>
@@ -12,4 +12,15 @@
     <string name="system_apps">Εφαρμογές συστήματος</string>
     <string name="about">Σχετικά με</string>
     <string name="about_summary">Μια εφαρμογή τείχους προστασίας που χρησιμοποιεί το εσωτερικό API δικτύου του Android.</string>
+    <string name="default_settings">Προεπιλεγμένες ρυθμίσεις</string>
+    <string name="custom_settings">Προσαρμοσμένες ρυθμίσεις</string>
+    <string name="no_internet">Η εφαρμογή δεν ζητά άδεια διαδικτύου</string>
+    <string name="version">Έκδοση: &lt;xliff:g id= \"versionus %1$s&lt;/xliff:g&gt;</string>
+    <string name="contributors_title">Συνεισφέροντες</string>
+    <string name="contributing_orgs_title">Συνεισφέροντες Οργανισμοί</string>
+    <string name="contributing_orgs_summary"><a href="https://www.calyxinstitute.org">Calyx Institute</a> για χρήση στο <a href="https://calyxos.org">CalyxOS</a></string>
+    <string name="app_logo">Λογότυπο εφαρμογής</string>
+    <string name="searchbar_hint">Αναζήτηση εφαρμογών</string>
+    <string name="about_foss">Είναι αδειοδοτημένο και διανέμεται σύμφωνα με την άδεια <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 </a>. Δείτε τα αρχεία για πληροφορίες μεμονωμένων κατόχων πνευματικών δικαιωμάτων.</string>
+    <string name="work_profile_help">Η διαχείριση των ρυθμίσεων τείχους προστασίας για τις εφαρμογές εργασίας γίνεται στην εφαρμογή Τείχος προστασίας του προσωπικού προφίλ σας. Οι εφαρμογές εργασίας έχουν ένα εικονίδιο χαρτοφύλακα πάνω τους.</string>
 </resources>

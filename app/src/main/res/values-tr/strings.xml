@@ -12,4 +12,16 @@
     <string name="sort_by_name">Ada göre sırala</string>
     <string name="about">Hakkında</string>
     <string name="about_summary">Android\'in dahili ağ API\'sini kullanan bir güvenlik duvarı uygulaması.</string>
+    <string name="default_settings">Öntanımlı ayarlar</string>
+    <string name="contributing_orgs_summary"><a href="https://calyxos.org">CalyxOS</a>\'de kullanım için <a href="https://www.calyxinstitute.org">Calyx Enstitüsü</a></string>
+    <string name="about_foss"><a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 Lisansı</a> altında lisanslanır ve dağıtılır. Bireysel telif hakkı sahibinin bilgileri için dosyalara bakın.</string>
+    <string name="app_logo">Uygulama logosu</string>
+    <string name="searchbar_hint">Uygulamaları arayın</string>
+    <string name="custom_settings">Özel ayarlar</string>
+    <string name="no_internet">Uygulama internet izni istemiyor</string>
+    <string name="version">Sürüm: &lt;xliff:g id=\"version\"&gt;%1$s&lt;/xliff:g&gt;</string>
+    <string name="contributors_title">Katkıda bulunanlar</string>
+    <string name="contributors_summary"><a href="https://gitlab.com/CalyxOS/platform_packages_apps_Datura/-/graphs/android13">Katkıda bulunanların listesi</a> için lütfen GitHub\'a bakın.</string>
+    <string name="contributing_orgs_title">Katkıda Bulunan Kuruluşlar</string>
+    <string name="work_profile_help">İş uygulamaları için güvenlik duvarı ayarları kişisel profilinizin Güvenlik Duvarı uygulamasından yönetilir. İş uygulamalarının üzerinde bir evrak çantası simgesi bulunur.</string>
 </resources>
