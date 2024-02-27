@@ -16,6 +16,29 @@
       "message": "Manual import because of weblate repo reset",
       "revId": "5db48c065a8661e612c02e227de46c05308eeebf",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1fb2aef5_eead8567",
+        "filename": "app/src/main/res/values-el/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2024-02-27T16:34:09Z",
+      "side": 1,
+      "message": "This is broken in all translations",
+      "range": {
+        "startLine": 18,
+        "startChar": 35,
+        "endLine": 18,
+        "endChar": 83
+      },
+      "revId": "5db48c065a8661e612c02e227de46c05308eeebf",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
