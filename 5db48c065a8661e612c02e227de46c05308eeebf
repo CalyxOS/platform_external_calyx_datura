@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0c829ca3_ad427fde",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-02-27T16:31:32Z",
+      "side": 1,
+      "message": "Manual import because of weblate repo reset",
+      "revId": "5db48c065a8661e612c02e227de46c05308eeebf",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
