@@ -8,6 +8,8 @@ package org.calyxos.datura.utils
 import android.content.Context
 import android.content.SharedPreferences
 import android.net.NetworkPolicyManager
+import android.os.INetworkManagementService
+import android.os.ServiceManager
 import androidx.preference.PreferenceManager
 import dagger.Module
 import dagger.Provides
@@ -30,5 +32,13 @@ object CommonModule {
     @Provides
     fun providesDefaultSharedPreferences(@ApplicationContext context: Context): SharedPreferences {
         return PreferenceManager.getDefaultSharedPreferences(context)
+    }
+
+    @Singleton
+    @Provides
+    fun providesNetworkManagementService(): INetworkManagementService {
+        return INetworkManagementService.Stub.asInterface(
+            ServiceManager.getService(Context.NETWORKMANAGEMENT_SERVICE)
+        )
     }
 }
