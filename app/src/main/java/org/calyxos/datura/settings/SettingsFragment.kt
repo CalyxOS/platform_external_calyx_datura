@@ -5,19 +5,25 @@
 
 package org.calyxos.datura.settings
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.os.StrictMode
+import android.os.UserManager
 import android.provider.Settings
 import android.view.View
 import androidx.navigation.fragment.findNavController
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.SwitchPreferenceCompat
+import com.android.net.module.util.ConnectivitySettingsUtils.PRIVATE_DNS_MODE_PROVIDER_HOSTNAME
+import com.android.net.module.util.ConnectivitySettingsUtils.getPrivateDnsMode
 import dagger.hilt.android.AndroidEntryPoint
 import lineageos.providers.LineageSettings
 import org.calyxos.datura.R
 import org.calyxos.datura.databinding.FragmentSettingsBinding
 import org.calyxos.datura.service.DaturaService
+import org.calyxos.datura.utils.CommonUtils.PREFERENCE_CLEARTEXT
 import org.calyxos.datura.utils.CommonUtils.PREFERENCE_DEFAULT_INTERNET
 import org.calyxos.datura.utils.CommonUtils.PREFERENCE_NOTIFICATIONS
 
@@ -47,7 +53,12 @@ class SettingsFragment : PreferenceFragmentCompat() {
             ) == 0
             it.setOnPreferenceChangeListener { _, newValue ->
                 if (!newValue.toString().toBoolean()) {
-                    requireContext().startForegroundService(Intent(context, DaturaService::class.java))
+                    requireContext().startForegroundService(
+                        Intent(
+                            context,
+                            DaturaService::class.java
+                        )
+                    )
                 } else {
                     requireContext().stopService(Intent(context, DaturaService::class.java))
                 }
@@ -72,10 +83,50 @@ class SettingsFragment : PreferenceFragmentCompat() {
                 true
             }
         }
+
+        findPreference<SwitchPreferenceCompat>(PREFERENCE_CLEARTEXT)?.let {
+            it.isVisible = requireContext().getSystemService(UserManager::class.java).isSystemUser
+            it.isChecked = isGlobalClearTextEnabled(requireContext())
+            it.isEnabled = isGlobalClearTextPrefEnabled(requireContext())
+
+            it.setOnPreferenceChangeListener { _, newValue ->
+                val result = LineageSettings.Global.putInt(
+                    context?.contentResolver,
+                    LineageSettings.Global.CLEARTEXT_NETWORK_POLICY,
+                    if (newValue as Boolean) {
+                        StrictMode.NETWORK_POLICY_REJECT
+                    } else {
+                        StrictMode.NETWORK_POLICY_INVALID
+                    }
+                )
+                it.isEnabled = isGlobalClearTextPrefEnabled(requireContext())
+                result
+            }
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        findPreference<SwitchPreferenceCompat>(PREFERENCE_CLEARTEXT)?.apply {
+            isEnabled = isGlobalClearTextPrefEnabled(context)
+        }
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun isGlobalClearTextPrefEnabled(ctx: Context): Boolean {
+        return isGlobalClearTextEnabled(ctx) ||
+            getPrivateDnsMode(ctx) == PRIVATE_DNS_MODE_PROVIDER_HOSTNAME
+    }
+
+    private fun isGlobalClearTextEnabled(context: Context): Boolean {
+        return LineageSettings.Global.getInt(
+            context.contentResolver,
+            LineageSettings.Global.CLEARTEXT_NETWORK_POLICY,
+            StrictMode.NETWORK_POLICY_INVALID
+        ) == StrictMode.NETWORK_POLICY_REJECT
     }
 }
