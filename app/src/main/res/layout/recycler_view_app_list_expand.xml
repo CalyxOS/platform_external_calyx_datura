@@ -127,4 +127,36 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:id="@+id/cleartextLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/vpnLayout">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawablePadding="30dp"
+            android:paddingStart="15dp"
+            android:paddingEnd="5dp"
+            android:text="@string/allow_cleartext_data"
+            android:textColor="?android:textColorPrimary"
+            android:textSize="14sp"
+            app:drawableStartCompat="@drawable/ic_http" />
+
+        <com.google.android.material.materialswitch.MaterialSwitch
+            android:id="@+id/cleartextSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:thumbTint="@color/material_switch_thumb"
+            app:trackDecorationTint="@color/material_switch_decoration"
+            app:trackTint="@color/material_switch_track" />
+
+    </LinearLayout>
+
 </LinearLayout>

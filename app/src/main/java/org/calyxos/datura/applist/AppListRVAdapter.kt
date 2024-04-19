@@ -12,10 +12,11 @@ import android.net.NetworkPolicyManager.POLICY_REJECT_CELLULAR
 import android.net.NetworkPolicyManager.POLICY_REJECT_METERED_BACKGROUND
 import android.net.NetworkPolicyManager.POLICY_REJECT_VPN
 import android.net.NetworkPolicyManager.POLICY_REJECT_WIFI
+import android.os.INetworkManagementService
+import android.os.StrictMode
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.core.graphics.drawable.toDrawable
 import androidx.core.view.isVisible
@@ -23,6 +24,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.materialswitch.MaterialSwitch
+import lineageos.providers.LineageSettings
 import org.calyxos.datura.R
 import org.calyxos.datura.databinding.RecyclerViewAppListBinding
 import org.calyxos.datura.databinding.RecyclerViewHeaderListBinding
@@ -35,7 +37,8 @@ import javax.inject.Singleton
 
 class AppListRVAdapter @Inject constructor(
     daturaItemDiffUtil: DaturaItemDiffUtil,
-    private val networkPolicyManager: NetworkPolicyManager
+    private val networkPolicyManager: NetworkPolicyManager,
+    private val networkManagementService: INetworkManagementService
 ) : ListAdapter<DaturaItem, RecyclerView.ViewHolder>(daturaItemDiffUtil) {
 
     inner class AppViewHolder(val binding: RecyclerViewAppListBinding) :
@@ -56,6 +59,7 @@ class AppListRVAdapter @Inject constructor(
                         (oldItem as Header).name == (newItem as Header).name
                     }
                 }
+
                 else -> false
             }
         }
@@ -76,6 +80,7 @@ class AppListRVAdapter @Inject constructor(
                         else -> true
                     }
                 }
+
                 Type.HEADER -> {
                     (oldItem as Header).name == (newItem as Header).name
                 }
@@ -181,12 +186,13 @@ class AppListRVAdapter @Inject constructor(
                                 mapOfSwitchAndPolicy.filter { it.key != mainSwitch }.forEach {
                                     it.key.isEnabled = isChecked
                                 }
+                                expandLayout.cleartextSwitch.isEnabled = isChecked
                             }
 
                             // Reflect appropriate settings status
                             updateSettingsText(
-                                settingsMode,
-                                mapOfSwitchAndPolicy.keys,
+                                holder,
+                                mapOfSwitchAndPolicy.keys + expandLayout.cleartextSwitch,
                                 app.requestsInternetPermission
                             )
                         }
@@ -194,9 +200,57 @@ class AppListRVAdapter @Inject constructor(
                 }
             }
 
+            val cleartextNetworkPolicy = LineageSettings.Global.getInt(
+                holder.itemView.context.contentResolver,
+                LineageSettings.Global.CLEARTEXT_NETWORK_POLICY,
+                StrictMode.NETWORK_POLICY_INVALID
+            )
+
+            val cleartextNetworkAllowed = app.requestsInternetPermission && mainSwitchEnabled &&
+                cleartextNetworkPolicy == StrictMode.NETWORK_POLICY_REJECT
+
+            expandLayout.cleartextLayout.visibility = if (cleartextNetworkAllowed) {
+                View.VISIBLE
+            } else {
+                View.GONE
+            }
+
+            expandLayout.cleartextSwitch.apply {
+                setOnCheckedChangeListener(null)
+
+                val uidCleartextNetworkPolicy =
+                    networkManagementService.getUidCleartextNetworkPolicy(app.uid)
+
+                // Avoid allowing cleartext traffic for apps that always restrict it
+                isEnabled = cleartextNetworkAllowed &&
+                    uidCleartextNetworkPolicy != StrictMode.NETWORK_POLICY_REJECT
+
+                isChecked = uidCleartextNetworkPolicy == StrictMode.NETWORK_POLICY_ACCEPT
+
+                setOnCheckedChangeListener { view, isChecked ->
+                    if (view.isVisible) {
+                        networkManagementService.setUidCleartextNetworkPolicy(
+                            app.uid,
+                            if (isChecked) {
+                                StrictMode.NETWORK_POLICY_ACCEPT
+                            } else {
+                                StrictMode.NETWORK_POLICY_INVALID
+                            }
+                        )
+                    }
+
+                    // Reflect appropriate settings status
+                    updateSettingsText(
+                        holder,
+                        mapOfSwitchAndPolicy.keys + this,
+                        app.requestsInternetPermission
+                    )
+                }
+            }
+
             updateSettingsText(
-                settingsMode,
-                mapOfSwitchAndPolicy.keys,
+                holder,
+                mapOfSwitchAndPolicy.keys + expandLayout.cleartextSwitch,
                 app.requestsInternetPermission
             )
         }
@@ -237,13 +291,14 @@ class AppListRVAdapter @Inject constructor(
     }
 
     private fun updateSettingsText(
-        settingsMode: TextView,
+        holder: AppViewHolder,
         switches: Set<MaterialSwitch>,
         reqInternetPerm: Boolean
     ) {
+        val settingsMode = holder.binding.settingsMode
         val context = settingsMode.context
         if (reqInternetPerm) {
-            if (switches.all { it.isChecked }) {
+            if (switches.all { if (it == holder.binding.expandLayout.cleartextSwitch) !it.isChecked else it.isChecked }) {
                 settingsMode.text = context.getString(R.string.default_settings)
             } else {
                 settingsMode.text = context.getString(R.string.custom_settings)
