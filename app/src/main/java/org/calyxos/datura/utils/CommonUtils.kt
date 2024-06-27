@@ -16,7 +16,9 @@ import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
 import android.content.pm.PackageManager.PackageInfoFlags
 import android.graphics.Bitmap
+import android.os.INetworkManagementService
 import android.os.Process
+import android.os.ServiceManager
 import android.os.UserHandle
 import android.os.UserManager
 import android.util.Log
@@ -58,6 +60,9 @@ object CommonUtils {
     private fun getAllPackages(context: Context): List<App> {
         val applicationList = mutableListOf<App>()
         val packageManager = context.packageManager
+        val networkManagementService = INetworkManagementService.Stub.asInterface(
+            ServiceManager.getService(Context.NETWORKMANAGEMENT_SERVICE)
+        )
 
         val usageStatsList = getUsageStats(context)
         val packageList = getAppsInstalledForAllUsers(context)
@@ -80,7 +85,8 @@ object CommonUtils {
                 requestsInternetPermission,
                 false,
                 usageStatsList.firstOrNull { u -> u.packageName == it.packageName }?.lastTimeUsed
-                    ?: 0L
+                    ?: 0L,
+                networkManagementService.getUidCleartextNetworkPolicy(it.applicationInfo!!.uid)
             )
             applicationList.add(app)
         }

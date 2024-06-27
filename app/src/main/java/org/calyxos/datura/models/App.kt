@@ -6,6 +6,7 @@
 package org.calyxos.datura.models
 
 import android.graphics.Bitmap
+import android.os.StrictMode
 
 data class App(
     val name: String = String(),
@@ -16,5 +17,6 @@ data class App(
     val requestsInternetPermission: Boolean = false,
     var isExpanded: Boolean = false,
     val lastTimeUsed: Long = 0,
+    var cleartextNetworkPolicy: Int = StrictMode.NETWORK_POLICY_INVALID,
     override val type: Type = Type.APP
 ) : DaturaItem
