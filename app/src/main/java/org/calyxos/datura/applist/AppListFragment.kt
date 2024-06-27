@@ -30,7 +30,7 @@ import org.calyxos.datura.utils.CommonUtils
 import javax.inject.Inject
 
 @AndroidEntryPoint
-class AppListFragment : Fragment(R.layout.fragment_app_list) {
+class AppListFragment : Fragment(R.layout.fragment_app_list), AppListRVAdapter.AppListInterface {
 
     private val TAG = AppListFragment::class.java.simpleName
 
@@ -40,10 +40,10 @@ class AppListFragment : Fragment(R.layout.fragment_app_list) {
     private val viewModel: MainActivityViewModel by activityViewModels()
 
     @Inject
-    lateinit var appListRVAdapter: AppListRVAdapter
+    lateinit var appListRVAdapterFactory: AppListRVAdapter.AppListRVAdapterFactory
 
     @Inject
-    lateinit var searchAppListRVAdapter: AppListRVAdapter
+    lateinit var searchAppListRVAdapterFactory: AppListRVAdapter.AppListRVAdapterFactory
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -69,6 +69,7 @@ class AppListFragment : Fragment(R.layout.fragment_app_list) {
         val uid: Int = activity?.intent?.getIntExtra(Intent.EXTRA_UID, -1) ?: -1
 
         // Recycler View
+        val appListRVAdapter = appListRVAdapterFactory.create(this)
         binding.recyclerView.adapter = appListRVAdapter
         viewLifecycleOwner.lifecycleScope.launch {
             viewModel.appList.collect { list ->
@@ -108,6 +109,7 @@ class AppListFragment : Fragment(R.layout.fragment_app_list) {
             }
         }
 
+        val searchAppListRVAdapter = searchAppListRVAdapterFactory.create(this)
         binding.searchView.setupWithSearchBar(binding.searchBar)
         binding.searchRecyclerView.adapter = searchAppListRVAdapter
 
@@ -128,6 +130,10 @@ class AppListFragment : Fragment(R.layout.fragment_app_list) {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onListChanged(list: List<DaturaItem>) {
+        viewModel.updateAppList(list)
     }
 
     private fun scrollToAndExpandUid(recyclerView: RecyclerView, uid: Int, list: List<DaturaItem>) {
