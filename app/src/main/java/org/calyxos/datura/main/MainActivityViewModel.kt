@@ -7,11 +7,16 @@ package org.calyxos.datura.main
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.os.INetworkManagementService
+import android.os.StrictMode
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
+import kotlinx.coroutines.NonCancellable
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.launch
 import org.calyxos.datura.models.App
 import org.calyxos.datura.models.DaturaItem
 import org.calyxos.datura.models.Sort
@@ -22,7 +27,8 @@ import javax.inject.Inject
 @HiltViewModel
 @SuppressLint("StaticFieldLeak") // false positive, see https://github.com/google/dagger/issues/3253
 class MainActivityViewModel @Inject constructor(
-    @ApplicationContext private val context: Context
+    @ApplicationContext private val context: Context,
+    private val networkManagementService: INetworkManagementService
 ) : ViewModel() {
 
     var sort = Sort.NAME
@@ -37,6 +43,10 @@ class MainActivityViewModel @Inject constructor(
     fun fetchAppList() {
         _appList.value = CommonUtils.getAllPackagesWithHeader(context)
         if (sort != Sort.NAME) sortAppList(sort)
+    }
+
+    fun updateAppList(list: List<DaturaItem>) {
+        _appList.value = list
     }
 
     fun getFilteredAppList(text: String): List<DaturaItem> {
@@ -84,6 +94,19 @@ class MainActivityViewModel @Inject constructor(
                         this.size
                     ).sortWith(compareBy(String.CASE_INSENSITIVE_ORDER) { (it as App).name })
                 }
+            }
+        }
+    }
+
+    fun resetPerAppClearTextStatus() {
+        viewModelScope.launch(NonCancellable) {
+            _appList.value.filter {
+                it.type == Type.APP &&
+                    (it as App).cleartextNetworkPolicy == StrictMode.NETWORK_POLICY_ACCEPT
+            }.forEach {
+                networkManagementService.setUidCleartextNetworkPolicy(
+                    (it as App).uid, StrictMode.NETWORK_POLICY_INVALID
+                )
             }
         }
     }

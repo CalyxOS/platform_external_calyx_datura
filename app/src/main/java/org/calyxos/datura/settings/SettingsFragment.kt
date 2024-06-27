@@ -8,10 +8,13 @@ package org.calyxos.datura.settings
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.os.INetworkManagementService
 import android.os.StrictMode
 import android.os.UserManager
 import android.provider.Settings
 import android.view.View
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
@@ -19,19 +22,32 @@ import androidx.preference.SwitchPreferenceCompat
 import com.android.net.module.util.ConnectivitySettingsUtils.PRIVATE_DNS_MODE_PROVIDER_HOSTNAME
 import com.android.net.module.util.ConnectivitySettingsUtils.getPrivateDnsMode
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.NonCancellable
+import kotlinx.coroutines.flow.filter
+import kotlinx.coroutines.flow.firstOrNull
+import kotlinx.coroutines.launch
 import lineageos.providers.LineageSettings
 import org.calyxos.datura.R
 import org.calyxos.datura.databinding.FragmentSettingsBinding
+import org.calyxos.datura.main.MainActivityViewModel
+import org.calyxos.datura.models.App
+import org.calyxos.datura.models.Type
 import org.calyxos.datura.service.DaturaService
 import org.calyxos.datura.utils.CommonUtils.PREFERENCE_CLEARTEXT
 import org.calyxos.datura.utils.CommonUtils.PREFERENCE_DEFAULT_INTERNET
 import org.calyxos.datura.utils.CommonUtils.PREFERENCE_NOTIFICATIONS
+import javax.inject.Inject
 
 @AndroidEntryPoint
 class SettingsFragment : PreferenceFragmentCompat() {
 
     private var _binding: FragmentSettingsBinding? = null
     private val binding get() = _binding!!
+
+    private val viewModel: MainActivityViewModel by activityViewModels()
+
+    @Inject
+    lateinit var networkManagementService: INetworkManagementService
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -90,6 +106,7 @@ class SettingsFragment : PreferenceFragmentCompat() {
             it.isEnabled = isGlobalClearTextPrefEnabled(requireContext())
 
             it.setOnPreferenceChangeListener { _, newValue ->
+                viewModel.resetPerAppClearTextStatus()
                 val result = LineageSettings.Global.putInt(
                     context?.contentResolver,
                     LineageSettings.Global.CLEARTEXT_NETWORK_POLICY,
