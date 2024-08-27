@@ -12,7 +12,6 @@ import android.app.Service
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
-import android.content.IntentFilter
 import android.content.pm.PackageManager
 import android.content.pm.ServiceInfo
 import android.os.IBinder
@@ -98,11 +97,7 @@ class DaturaService : Service() {
 
         registerReceiverForAllUsers(
             packageReceiver,
-            IntentFilter().apply {
-                addAction(Intent.ACTION_PACKAGE_ADDED)
-                addAction(Intent.ACTION_PACKAGE_REMOVED)
-                addDataScheme("package")
-            },
+            CommonUtils.broadcastIntentFilter,
             null,
             null
         )

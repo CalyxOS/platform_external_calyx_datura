@@ -31,11 +31,11 @@ class MainActivityViewModel @Inject constructor(
     val appList = _appList.asStateFlow()
 
     init {
-        _appList.value = getAppList()
+        fetchAppList()
     }
 
-    private fun getAppList(): List<DaturaItem> {
-        return CommonUtils.getAllPackagesWithHeader(context)
+    fun fetchAppList() {
+        _appList.value = CommonUtils.getAllPackagesWithHeader(context)
     }
 
     fun getFilteredAppList(text: String): List<DaturaItem> {

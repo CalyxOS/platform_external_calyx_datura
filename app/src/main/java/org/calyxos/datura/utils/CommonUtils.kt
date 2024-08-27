@@ -9,6 +9,8 @@ import android.Manifest
 import android.app.usage.UsageStats
 import android.app.usage.UsageStatsManager
 import android.content.Context
+import android.content.Intent
+import android.content.IntentFilter
 import android.content.pm.ApplicationInfo
 import android.content.pm.PackageInfo
 import android.content.pm.PackageManager
@@ -31,6 +33,13 @@ object CommonUtils {
     const val PREFERENCE_NOTIFICATIONS = "PREFERENCE_NOTIFICATIONS"
 
     private const val TAG = "CommonUtils"
+
+    val broadcastIntentFilter: IntentFilter
+        get() = IntentFilter().apply {
+            addAction(Intent.ACTION_PACKAGE_ADDED)
+            addAction(Intent.ACTION_PACKAGE_REMOVED)
+            addDataScheme("package")
+        }
 
     fun getAllPackagesWithHeader(context: Context): List<DaturaItem> {
         val appList = getAllPackages(context).toMutableList()

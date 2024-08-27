@@ -5,8 +5,11 @@
 
 package org.calyxos.datura.applist
 
+import android.content.BroadcastReceiver
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.activity.addCallback
 import androidx.core.widget.addTextChangedListener
@@ -23,10 +26,13 @@ import org.calyxos.datura.main.MainActivityViewModel
 import org.calyxos.datura.models.App
 import org.calyxos.datura.models.DaturaItem
 import org.calyxos.datura.models.Sort
+import org.calyxos.datura.utils.CommonUtils
 import javax.inject.Inject
 
 @AndroidEntryPoint
 class AppListFragment : Fragment(R.layout.fragment_app_list) {
+
+    private val TAG = AppListFragment::class.java.simpleName
 
     private var _binding: FragmentAppListBinding? = null
     private val binding get() = _binding!!
@@ -42,6 +48,22 @@ class AppListFragment : Fragment(R.layout.fragment_app_list) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentAppListBinding.bind(view)
+
+        // Register receiver to update list on install/uninstall
+        activity?.registerReceiver(
+            object : BroadcastReceiver() {
+                override fun onReceive(context: Context?, intent: Intent?) {
+                    when (intent?.action) {
+                        Intent.ACTION_PACKAGE_ADDED,
+                        Intent.ACTION_PACKAGE_REMOVED -> viewModel.fetchAppList()
+
+                        else -> Log.i(TAG, "Got an unhandled Intent ${intent?.action}")
+                    }
+                }
+            },
+            CommonUtils.broadcastIntentFilter,
+            Context.RECEIVER_NOT_EXPORTED
+        )
 
         // Get target UID if provided to activity, e.g. by link in Settings
         val uid: Int = activity?.intent?.getIntExtra(Intent.EXTRA_UID, -1) ?: -1
