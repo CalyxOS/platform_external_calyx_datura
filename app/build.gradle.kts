@@ -80,7 +80,7 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.6.1")
 
     // ViewModel
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.3")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.4")
 
     // Navigation Components
     val navVersion = "2.7.7"
@@ -88,7 +88,7 @@ dependencies {
     implementation("androidx.navigation:navigation-ui-ktx:$navVersion")
 
     // Hilt
-    val hiltVersion = "2.51.1"
+    val hiltVersion = "2.52"
     ksp("com.google.dagger:hilt-compiler:$hiltVersion")
     implementation("com.google.dagger:hilt-android:$hiltVersion")
 }
