@@ -36,6 +36,7 @@ class MainActivityViewModel @Inject constructor(
 
     fun fetchAppList() {
         _appList.value = CommonUtils.getAllPackagesWithHeader(context)
+        if (sort != Sort.NAME) sortAppList(sort)
     }
 
     fun getFilteredAppList(text: String): List<DaturaItem> {
