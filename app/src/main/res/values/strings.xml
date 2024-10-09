@@ -27,7 +27,6 @@
     <!-- About Fragment -->
     <string name="about">About</string>
     <string name="about_summary">A firewall application using Android\'s internal network API.</string>
-    <string name="about_foss">It is licensed and distributed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>. See files for individual copyright holder\'s information.</string>
     <string name="version">Version: <xliff:g id="version">%1$s</xliff:g></string>
     <string name="contributors_title">Contributors</string>
     <string name="contributors_summary">Please see GitLab for a <a href="https://gitlab.com/CalyxOS/platform_external_calyx_datura/-/graphs/HEAD">list of contributors</a>.</string>
