@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a6d1921e_fc0c0402",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000065
+      },
+      "writtenOn": "2024-10-09T07:37:12Z",
+      "side": 1,
+      "message": "Merged in android14",
+      "revId": "fc8f41fc7057de39b17f449d176c312305afea70",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
