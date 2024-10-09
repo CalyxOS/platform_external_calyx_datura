@@ -47,8 +47,7 @@ class AboutFragment : Fragment(R.layout.fragment_about) {
         // Make required views clickable
         val linkViews = listOf(
             binding.contributorsDesc,
-            binding.contributingOrgsDesc,
-            binding.license
+            binding.contributingOrgsDesc
         )
         linkViews.forEach {
             it.apply {
