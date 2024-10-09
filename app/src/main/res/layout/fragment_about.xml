@@ -63,19 +63,6 @@
         app:layout_constraintTop_toBottomOf="@id/appVersion" />
 
     <TextView
-        android:id="@+id/license"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="5dp"
-        android:text="@string/about_foss"
-        android:textColor="?android:textColorPrimary"
-        android:textSize="15sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/summary" />
-
-    <TextView
         android:id="@+id/contributors"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -87,7 +74,7 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/license" />
+        app:layout_constraintTop_toBottomOf="@id/appVersion" />
 
     <TextView
         android:id="@+id/contributors_desc"
