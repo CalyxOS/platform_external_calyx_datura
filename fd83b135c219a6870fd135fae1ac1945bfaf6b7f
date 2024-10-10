@@ -16,6 +16,24 @@
       "message": "Untested. What do you think?",
       "revId": "fd83b135c219a6870fd135fae1ac1945bfaf6b7f",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0ea9862b_cc576ccd",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000065
+      },
+      "writtenOn": "2024-10-10T13:19:13Z",
+      "side": 1,
+      "message": "It should be fine to do so. The license is on source anyways.",
+      "parentUuid": "780a05ee_6d91513a",
+      "revId": "fd83b135c219a6870fd135fae1ac1945bfaf6b7f",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
