@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4299718d_402e74fd",
+        "filename": "app/src/main/res/values/strings.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000062
+      },
+      "writtenOn": "2024-10-10T13:38:10Z",
+      "side": 0,
+      "message": "Only this specific part about copyright holders was confusing.\n\nThere are other apps that indicate what license they\u0027re using similarly (e.g. Etar, F-Droid). But there are also many apps that don\u0027t (e.g. Camera, Clock, Gallery).\n\nI think it\u0027s fine to remove, particularly because Datura is part of the OS and not distributed separately, but maybe we could update the commit message, e.g. \"Remove licensing info\"   \"Built-in apps generally don\u0027t have or need it, and part of the way it was written was confusing.\"",
+      "range": {
+        "startLine": 30,
+        "startChar": 149,
+        "endLine": 30,
+        "endChar": 206
+      },
+      "revId": "3f165e9892057e02c725b1df4c3f784880a2a031",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
