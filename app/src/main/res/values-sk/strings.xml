@@ -24,4 +24,16 @@
     <string name="contributors_summary">Zoznam prispievateľov nájdete na <a href="https://gitlab.com/CalyxOS/platform_external_calyx_datura/-/graphs/HEAD">na GitLabu</a>.</string>
     <string name="contributing_orgs_title">Prispievajúce organizácie</string>
     <string name="work_profile_help">Nastavenie firewallu pre pracovné aplikácie nájdete v aplikácii Firewall vo vašom osobnom profile. Pracovné aplikácie majú pri sebe ikonu kufríka.</string>
+    <string name="settings">Nastavenia</string>
+    <string name="pref_default_internet_title">Povoliť internet pre nové inštalácie</string>
+    <string name="pref_default_internet_summary">Nové aplikácie budú mať vo východiskovom nastavení povolený prístup k internetu</string>
+    <string name="notification_channel_fgs">Služba v popredí</string>
+    <string name="notification_channel_alert">Upozornenia</string>
+    <string name="monitoring_new_app_installs_title">Monitorovanie nových inštalácií aplikácií</string>
+    <string name="monitoring_new_app_installs_desc">Firewall teraz monitoruje novú inštaláciu aplikácií, aby mohol vo východiskovom nastavení zakázať prístup k internetu!</string>
+    <string name="internet_access_denied_title">Prístup na internet odmietnutý!</string>
+    <string name="internet_access_denied_desc">Aplikácia &lt;xliff:g id=\"app_name\"&gt;%1$s&lt;xliff:g&gt; nemá žiadny prístup k internetu. Chcete ho povoliť?</string>
+    <string name="allow">Povoliť</string>
+    <string name="notifications">Oznámenia</string>
+    <string name="notifications_desc">Upozornenia týkajúce sa prístupu na internet pre nové inštalácie aplikácií</string>
 </resources>
