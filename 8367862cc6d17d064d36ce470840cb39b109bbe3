@@ -16,6 +16,24 @@
       "message": "Would this also handle if the global setting is changed from dev options?",
       "revId": "8367862cc6d17d064d36ce470840cb39b109bbe3",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "20ec778a_99e19e8f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2024-11-22T03:34:16Z",
+      "side": 1,
+      "message": "It doesn\u0027t seem so to me. One option if we can\u0027t listen to the setting directly would be to revert the setting from other/dev options",
+      "parentUuid": "6257038a_33ab3309",
+      "revId": "8367862cc6d17d064d36ce470840cb39b109bbe3",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
