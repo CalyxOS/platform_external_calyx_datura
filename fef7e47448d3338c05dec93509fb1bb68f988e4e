@@ -34,6 +34,24 @@
       "parentUuid": "d285adcd_2e8f6b2a",
       "revId": "fef7e47448d3338c05dec93509fb1bb68f988e4e",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "58f5a9f7_0ca95a6c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 42
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2024-11-22T03:24:07Z",
+      "side": 1,
+      "message": "Android.jar is present in https://review.calyxos.org/c/CalyxOS/platform_external_calyx_datura/+/25955",
+      "parentUuid": "4dca4ed1_5d99f351",
+      "revId": "fef7e47448d3338c05dec93509fb1bb68f988e4e",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
