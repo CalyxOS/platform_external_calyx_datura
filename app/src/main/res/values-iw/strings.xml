@@ -24,4 +24,16 @@
     <string name="contributing_orgs_summary"><a href="https://www.calyxinstitute.org">מכון Calyx</a> על השימוש ב־<a href="https://calyxos.org">CalyxOS</a></string>
     <string name="about_foss">מופץ בכפוף לרישיון <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0</a>. בקבצים עצמם מופיעים פרטי בעלי זכויות היוצרים.</string>
     <string name="work_profile_help">הגדרות חומת האש ליישומוני העבודה מנוהלים ביישומון חומת האש של הפרופיל שלך. על יישומונים העבודה מופיע סמל של מזוודה.</string>
+    <string name="settings">הגדרות</string>
+    <string name="pref_default_internet_title">לאפשר אינטרנט להתקנות חדשות</string>
+    <string name="pref_default_internet_summary">התקנות יישומים חדשים מורשות לגשת לאינטרנט כברירת מחדל</string>
+    <string name="notification_channel_fgs">שירות חזית</string>
+    <string name="notification_channel_alert">תזכורות</string>
+    <string name="monitoring_new_app_installs_title">מעקב אחר התקנות של יישומונים חדשים</string>
+    <string name="monitoring_new_app_installs_desc">חומת האש עוקבת אחר התקנות יישומונים חדשות כדי למנוע גישה לאינטרנט כברירת מחדל!</string>
+    <string name="internet_access_denied_title">הגישה לאינטרנט נדחתה!</string>
+    <string name="internet_access_denied_desc">ל־<xliff:g id="app_name">%1$s</xliff:g> אין גישה לאינטרנט. לאפשר אותה?</string>
+    <string name="allow">לאפשר</string>
+    <string name="notifications">התראות</string>
+    <string name="notifications_desc">התראות בנוגע לגישה לאינטרנט להתקנות של יישומונים חדשים</string>
 </resources>

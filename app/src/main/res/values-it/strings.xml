@@ -11,5 +11,29 @@
     <string name="sort_by_last_used">Ordina per usato per ultimo</string>
     <string name="sort_by_name">Ordina per nome</string>
     <string name="about">Di più</string>
-    <string name="about_summary">Un\'applicazione firewall che utilizza l\'API di rete interna di Android.</string>
+    <string name="about_summary">Un\'applicazione di firewall che utilizza l\'API di rete interna di Android.</string>
+    <string name="about_foss">Si applica licenza e distribuzione secondo la <a href="https://www.apache.org/licenses/LICENSE-2.0">Licenza Apache 2.0</a>. Per informazioni sui singoli detentori di copyright, consultare i file.</string>
+    <string name="contributors_summary">Vai a GitLab per trovare la <a href="https://gitlab.com/CalyxOS/platform_external_calyx_datura/-/graphs/HEAD">lista dei contributi</a>.</string>
+    <string name="work_profile_help">Le impostazioni del firewall per le app di lavoro sono gestite nell\'app Firewall del tuo profilo personale. Le app di lavoro si identificano dall\'icona della valigetta presente su di esse.</string>
+    <string name="notifications">Notifiche</string>
+    <string name="contributing_orgs_summary"><a href="https://www.calyxinstitute.org">Calyx Institute</a> per uso in <a href="https://calyxos.org">CalyxOS</a></string>
+    <string name="app_logo">Logo dell\'app</string>
+    <string name="searchbar_hint">Cerca app</string>
+    <string name="default_settings">Impostazioni predefinite</string>
+    <string name="custom_settings">Impostazioni personalizzate</string>
+    <string name="no_internet">L\'app non richiede permessi di rete</string>
+    <string name="version">Versione: &lt;xliff:g id=\"version\"&gt;%1$s&lt;/xliff:g&gt;</string>
+    <string name="contributors_title">Contributori</string>
+    <string name="contributing_orgs_title">Organizzazioni che contribuiscono</string>
+    <string name="settings">Impostazioni</string>
+    <string name="pref_default_internet_title">Consenti internet per le nuove installazioni</string>
+    <string name="pref_default_internet_summary">Le nuove installazioni delle app possono accedere ad Internet per impostazione predefinita</string>
+    <string name="notification_channel_fgs">Servizio in primo piano</string>
+    <string name="notification_channel_alert">Avvisi</string>
+    <string name="monitoring_new_app_installs_title">Monitoraggio delle installazioni di nuove app</string>
+    <string name="monitoring_new_app_installs_desc">Il firewall sta ora monitorando le nuove installazioni delle app per negare l\'accesso ad internet come impostazione predefinita!</string>
+    <string name="internet_access_denied_title">Accesso ad internet negato!</string>
+    <string name="internet_access_denied_desc">&lt;xliff:g id=\"app_name\"&gt;%1$s&lt;/xliff:g&gt; non ha accesso ad internet. Vuoi invece abilitarlo?</string>
+    <string name="allow">Consenti</string>
+    <string name="notifications_desc">Notifiche relative all\'accesso ad internet per le nuove installazioni delle app</string>
 </resources>
