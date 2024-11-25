@@ -1,2 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_short_name">ファイアウォール</string>
+    <string name="allow_wifi_data">Wi-Fi データを許可する</string>
+    <string name="allow_mobile_data">モバイルデータ通信を許可する</string>
+    <string name="sort_by_name">名前順</string>
+    <string name="allow_background_data">バックグラウンドでのネットワークアクセスを許可する</string>
+    <string name="installed_apps">インストールされているアプリ</string>
+    <string name="system_apps">システムアプリ</string>
+    <string name="about">詳細</string>
+    <string name="default_settings">デフォルト設定</string>
+    <string name="app_logo">アプリのロゴ</string>
+    <string name="searchbar_hint">アプリを検索</string>
+    <string name="custom_settings">カスタム設定</string>
+    <string name="no_internet">アプリはインターネットの許可を求めることはありません</string>
+    <string name="version">バージョン:<xliff:g id="version">%1$s</xliff:g></string>
+    <string name="contributors_title">協力者</string>
+    <string name="contributing_orgs_title">貢献した団体</string>
+</resources>
