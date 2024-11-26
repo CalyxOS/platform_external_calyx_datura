@@ -37,6 +37,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "00526896_9106dda5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 35
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-11-26T12:26:24Z",
+      "side": 1,
+      "message": "This is still pending.",
+      "parentUuid": "7de18f8e_7d46d270",
+      "revId": "68de190698309792da0f2bfc6619d8a8082d3e56",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "18de37a5_715410bf",
         "filename": "app/src/main/java/org/calyxos/datura/settings/SettingsFragment.kt",
         "patchSetId": 35
