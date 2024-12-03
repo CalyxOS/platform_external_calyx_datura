@@ -1,2 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">டதுரா ஃபயர்வால்</string>
+    <string name="app_short_name">ஃபயர்வால்</string>
+    <string name="installed_apps">நிறுவப்பட்ட பயன்பாடுகள்</string>
+    <string name="system_apps">கணினி பயன்பாடுகள்</string>
+    <string name="allow_background_data">பின்னணி பிணைய அணுகலை அனுமதிக்கவும்</string>
+    <string name="app_logo">பயன்பாட்டின் லோகோ</string>
+    <string name="searchbar_hint">பயன்பாடுகளைத் தேடுங்கள்</string>
+    <string name="default_settings">இயல்புநிலை அமைப்புகள்</string>
+    <string name="custom_settings">தனிப்பயன் அமைப்புகள்</string>
+    <string name="no_internet">பயன்பாடு இணைய அனுமதியைக் கேட்காது</string>
+    <string name="allow_wifi_data">வைஃபை தரவை அனுமதிக்கவும்</string>
+    <string name="allow_mobile_data">மொபைல் தரவை அனுமதிக்கவும்</string>
+    <string name="allow_vpn_data">VPN தரவை அனுமதிக்கவும்</string>
+    <string name="sort_by_last_used">கடைசியாக பயன்படுத்தப்பட்டதன் மூலம் வரிசைப்படுத்துங்கள்</string>
+    <string name="sort_by_name">பெயரால் வரிசைப்படுத்துங்கள்</string>
+    <string name="about">பற்றி</string>
+    <string name="about_summary">ஆண்ட்ராய்டு இன் உள் பிணையம் பநிஇ ஐப் பயன்படுத்தி ஃபயர்வால் பயன்பாடு.</string>
+    <string name="about_foss">இது <a href="https://www.apache.org/licenses/license-2.0">அப்பாச்சி 2.0 உரிமம்</a> இன் கீழ் உரிமம் பெற்று விநியோகிக்கப்படுகிறது. தனிப்பட்ட பதிப்புரிமை வைத்திருப்பவரின் தகவலுக்கான கோப்புகளைப் பார்க்கவும்.</string>
+    <string name="version">பதிப்பு: <xliff:g id="version">%1$s</xliff:g></string>
+    <string name="contributors_summary">தயவுசெய்து ஒரு <a href="https://gitlab.com/CalyxOS/platform_external_calyx_datura/-/graphs/HEAD">பங்களிப்பாளர்களின் பட்டியல் </a>.</string>
+    <string name="contributing_orgs_title">பங்களிப்பு நிறுவனங்கள்</string>
+    <string name="contributing_orgs_summary"><a href="https://www.calyxinstitute.org">கலிக்ச் இன்ச்டிடியூட்</a> <a href="https://calyxos.org">கலிக்சோச்</a> இல் பயன்படுத்த</string>
+    <string name="pref_default_internet_summary">புதிய பயன்பாட்டு நிறுவல்கள் இயல்பாக இணையத்தை அணுக அனுமதிக்கப்படுகின்றன</string>
+    <string name="monitoring_new_app_installs_title">புதிய பயன்பாட்டு நிறுவல்களை கண்காணித்தல்</string>
+    <string name="work_profile_help">பணி பயன்பாடுகளுக்கான ஃபயர்வால் அமைப்புகள் உங்கள் தனிப்பட்ட சுயவிவரத்தின் ஃபயர்வால் பயன்பாட்டில் நிர்வகிக்கப்படுகின்றன. வேலை பயன்பாடுகள் அவற்றில் ஒரு பிரீஃப்கேச் ஐகானைக் கொண்டுள்ளன.</string>
+    <string name="monitoring_new_app_installs_desc">இயல்பாக இணைய அணுகலை மறுக்க ஃபயர்வால் இப்போது புதிய பயன்பாட்டு நிறுவல்களை கண்காணித்து வருகிறது!</string>
+    <string name="internet_access_denied_title">இணைய அணுகல் மறுக்கப்பட்டது!</string>
+    <string name="contributors_title">பங்களிப்பாளர்கள்</string>
+    <string name="settings">அமைப்புகள்</string>
+    <string name="pref_default_internet_title">புதிய நிறுவல்களுக்கு இணையத்தை அனுமதிக்கவும்</string>
+    <string name="notification_channel_fgs">முன்புற பணி</string>
+    <string name="notification_channel_alert">விழிப்பூட்டல்கள்</string>
+    <string name="internet_access_denied_desc"><xliff:g id="app_name">%1$s</xliff:g> இணைய அணுகல் இல்லை. அதை அனுமதிக்க விரும்புகிறீர்களா?</string>
+    <string name="allow">இசைவு</string>
+    <string name="notifications">அறிவிப்புகள்</string>
+    <string name="notifications_desc">புதிய பயன்பாடுகளுக்கான இணைய அணுகல் தொடர்பான அறிவிப்புகள் நிறுவல்கள்</string>
+</resources>
