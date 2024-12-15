@@ -26,4 +26,9 @@
     <string name="contributing_orgs_summary"><a href="https://www.calyxinstitute.org">Calyx Institut</a> zur Verwendung in <a href="https://calyxos.org">CalyxOS</a></string>
     <string name="settings">Einstellungen</string>
     <string name="notifications">Benachrichtigungen</string>
+    <string name="pref_default_internet_title">Internet für neue Installationen erlauben</string>
+    <string name="pref_default_internet_summary">Neu Installierte Apps dürfen sich standartmäßig mit dem Internet verbinden</string>
+    <string name="notification_channel_alert">Benachrichtigungen</string>
+    <string name="monitoring_new_app_installs_title">Beobachtung neuer App Installationen</string>
+    <string name="monitoring_new_app_installs_desc">Firewall Beobachtet neue Anwendung Installationen um den Internet Zugang Standardmäßig zu blockieren!</string>
 </resources>
