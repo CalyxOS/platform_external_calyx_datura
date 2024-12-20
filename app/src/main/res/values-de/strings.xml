@@ -26,4 +26,14 @@
     <string name="contributing_orgs_summary"><a href="https://www.calyxinstitute.org">Calyx Institut</a> zur Verwendung in <a href="https://calyxos.org">CalyxOS</a></string>
     <string name="settings">Einstellungen</string>
     <string name="notifications">Benachrichtigungen</string>
+    <string name="pref_default_internet_title">Internet für neue Installationen erlauben</string>
+    <string name="pref_default_internet_summary">Neu Installierte Apps dürfen sich standartmäßig mit dem Internet verbinden</string>
+    <string name="notification_channel_alert">Benachrichtigungen</string>
+    <string name="monitoring_new_app_installs_title">Beobachtung neuer App Installationen</string>
+    <string name="monitoring_new_app_installs_desc">Firewall beobachtet neue Anwendung Installationen, um den Internetzugang standardmäßig zu blockieren!</string>
+    <string name="internet_access_denied_title">Internetzugriff verweigert!</string>
+    <string name="internet_access_denied_desc"><xliff:g id="app_name">%1$s</xliff:g> hat kein Internetzugriff. Möchtest du den Zugriff gewähren?</string>
+    <string name="notification_channel_fgs">Dienst im Vordergrund</string>
+    <string name="notifications_desc">Benachrichtigungen über den Internetzugang für neu installierte Anwendungen</string>
+    <string name="allow">Erlauben</string>
 </resources>
