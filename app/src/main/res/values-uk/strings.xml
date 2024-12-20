@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="app_short_name">Брандмауер</string>
-    <string name="installed_apps">Встановлені застосунки</string>
+    <string name="installed_apps">Встановлені програми</string>
     <string name="allow_background_data">Дозволити доступ до мережі у фоновому режимі</string>
     <string name="allow_wifi_data">Дозволити Wi-Fi дані</string>
     <string name="allow_vpn_data">Дозволити VPN дані</string>
@@ -9,19 +9,31 @@
     <string name="sort_by_name">Сортувати за назвою</string>
     <string name="about">Про</string>
     <string name="app_name">Брандмауер Datura</string>
-    <string name="system_apps">Системні застосунки</string>
+    <string name="system_apps">Системні програми</string>
     <string name="allow_mobile_data">Дозволити мобільні дані</string>
-    <string name="about_summary">Брандмауер-застосунок, що використовує внутрішній мережевий API Android.</string>
+    <string name="about_summary">Програма-брандмауер використовує внутрішній мережевий API від Android.</string>
     <string name="default_settings">Типові налаштування</string>
     <string name="about_foss">Ліцензований і поширюється за ліцензією <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>. Інформацію про окремих власників авторських прав міститься у файлах.</string>
-    <string name="work_profile_help">Налаштування брандмауера для робочих застосунків керуються в застосунку Firewall у вашому особистому профілі. Робочі застосунки мають значок портфеля.</string>
-    <string name="app_logo">Логотип застосунку</string>
-    <string name="searchbar_hint">Пошук застосунків</string>
+    <string name="work_profile_help">Налаштування брандмауера для робочих програм керуються у програмі Firewall у Вашому особистому профілі. Робочі програми мають значок портфеля.</string>
+    <string name="app_logo">Логотип програми</string>
+    <string name="searchbar_hint">Пошук програм</string>
     <string name="custom_settings">Власні налаштування</string>
-    <string name="no_internet">Застосунок не запитує дозволу на доступ до інтернету</string>
+    <string name="no_internet">Програма не запитує дозволу на доступ до інтернету</string>
     <string name="version">Версія: <xliff:g id="version">%1$s</xliff:g></string>
     <string name="contributors_title">Учасники</string>
     <string name="contributors_summary">Будь ласка, зверніться до GitLab, щоби дізнатися про <a href="https://gitlab.com/CalyxOS/platform_external_calyx_datura/-/graphs/HEAD">учасників</a>.</string>
     <string name="contributing_orgs_title">Організації-учасники</string>
     <string name="contributing_orgs_summary"><a href="https://www.calyxinstitute.org">Calyx Institute</a> для використання в<a href="https://calyxos.org">CalyxOS</a></string>
+    <string name="settings">Налаштування</string>
+    <string name="pref_default_internet_summary">Стандартно доступ до інтернету дозволений для нових додатків</string>
+    <string name="notification_channel_fgs">Сервіс переднього плану</string>
+    <string name="notification_channel_alert">Сповіщення</string>
+    <string name="monitoring_new_app_installs_title">Моніторинг встановлення нових програм</string>
+    <string name="monitoring_new_app_installs_desc">Брандмауер тепер стежить за встановленням нових програм, щоби типово забороняти доступ до інтернету!</string>
+    <string name="internet_access_denied_title">Доступ до інтернету заборонений!</string>
+    <string name="notifications">Повідомлення</string>
+    <string name="internet_access_denied_desc"><xliff:g id="app_name">%1$s</xliff:g> не має доступу до інтернету. Ви хочете дозволити?</string>
+    <string name="notifications_desc">Повідомлення щодо доступу до інтернету для нових встановлень програм</string>
+    <string name="pref_default_internet_title">Дозволити інтернет для нових встановлень</string>
+    <string name="allow">Дозволити</string>
 </resources>

@@ -1,2 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="installed_apps">Instalirane aplikacije</string>
+    <string name="app_name">Datura Firewall</string>
+    <string name="system_apps">Aplikacije sustava</string>
+    <string name="app_short_name">Firewall</string>
+    <string name="allow_background_data">Dozvoli pristup mreži u pozadini</string>
+    <string name="allow_wifi_data">Dozvoli Wi-Fi podatke</string>
+    <string name="allow_mobile_data">Dozvoli mobilne podatke</string>
+    <string name="allow_vpn_data">Dozvoli VPN podatke</string>
+    <string name="sort_by_last_used">Poredaj po zadnjem korištenju</string>
+    <string name="sort_by_name">Poredaj po imenu</string>
+    <string name="about_summary">Aplikacija vatrozida koja koristi Androidov interni mrežni API.</string>
+    <string name="default_settings">Zadane postavke</string>
+    <string name="app_logo">Logotip aplikacije</string>
+    <string name="searchbar_hint">Traži aplikacije</string>
+    <string name="custom_settings">Prilagođene postavke</string>
+    <string name="version">Verzija: <xliff:g id="version">%1$s</xliff:g></string>
+    <string name="contributors_title">Doprinositelji</string>
+    <string name="settings">Postavke</string>
+    <string name="notification_channel_alert">Upozorenja</string>
+    <string name="allow">Dozvoli</string>
+    <string name="notifications">Obavijesti</string>
+</resources>
