@@ -17,7 +17,6 @@
     <string name="sort_by_name">பெயரால் வரிசைப்படுத்துங்கள்</string>
     <string name="about">பற்றி</string>
     <string name="about_summary">ஆண்ட்ராய்டு இன் உள் பிணையம் பநிஇ ஐப் பயன்படுத்தி ஃபயர்வால் பயன்பாடு.</string>
-    <string name="about_foss">இது <a href="https://www.apache.org/licenses/license-2.0">அப்பாச்சி 2.0 உரிமம்</a> இன் கீழ் உரிமம் பெற்று விநியோகிக்கப்படுகிறது. தனிப்பட்ட பதிப்புரிமை வைத்திருப்பவரின் தகவலுக்கான கோப்புகளைப் பார்க்கவும்.</string>
     <string name="version">பதிப்பு: <xliff:g id="version">%1$s</xliff:g></string>
     <string name="contributors_summary">தயவுசெய்து ஒரு <a href="https://gitlab.com/CalyxOS/platform_external_calyx_datura/-/graphs/HEAD">பங்களிப்பாளர்களின் பட்டியல் </a>.</string>
     <string name="contributing_orgs_title">பங்களிப்பு நிறுவனங்கள்</string>

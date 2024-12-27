@@ -13,7 +13,6 @@
     <string name="about">Hakkında</string>
     <string name="about_summary">Android\'in dahili ağ API\'sini kullanan bir güvenlik duvarı uygulaması.</string>
     <string name="default_settings">Öntanımlı ayarlar</string>
-    <string name="about_foss"><a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 Lisansı</a> altında lisanslanır ve dağıtılır. Bireysel telif hakkı sahibinin bilgileri için dosyalara bakın.</string>
     <string name="app_logo">Uygulama logosu</string>
     <string name="searchbar_hint">Uygulamaları arayın</string>
     <string name="custom_settings">Özel ayarlar</string>

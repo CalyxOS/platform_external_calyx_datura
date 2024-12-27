@@ -12,7 +12,6 @@
     <string name="sort_by_name">Ordina per nome</string>
     <string name="about">Di più</string>
     <string name="about_summary">Un\'applicazione di firewall che utilizza l\'API di rete interna di Android.</string>
-    <string name="about_foss">Si applica licenza e distribuzione secondo la <a href="https://www.apache.org/licenses/LICENSE-2.0">Licenza Apache 2.0</a>. Per informazioni sui singoli detentori di copyright, consultare i file.</string>
     <string name="contributors_summary">Vai a GitLab per trovare la <a href="https://gitlab.com/CalyxOS/platform_external_calyx_datura/-/graphs/HEAD">lista dei contributi</a>.</string>
     <string name="work_profile_help">Le impostazioni del firewall per le app di lavoro sono gestite nell\'app Firewall del tuo profilo personale. Le app di lavoro si identificano dall\'icona della valigetta presente su di esse.</string>
     <string name="notifications">Notifiche</string>

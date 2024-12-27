@@ -18,7 +18,6 @@
     <string name="contributors_summary">Παρακαλούμε δείτε το GitLab για μια <a href="https://gitlab.com/CalyxOS/platform_external_calyx_datura/-/graphs/HEAD">λίστα συνεισφερόντων</a>.</string>
     <string name="searchbar_hint">Αναζήτηση εφαρμογών</string>
     <string name="app_logo">Λογότυπο εφαρμογής</string>
-    <string name="about_foss">Είναι αδειοδοτημένο και διανέμεται σύμφωνα με την άδεια <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0</a>. Δείτε τα αρχεία για πληροφορίες μεμονωμένων κατόχων πνευματικών δικαιωμάτων.</string>
     <string name="version">Έκδοση: <xliff:g id="version">%1$s</xliff:g></string>
     <string name="contributors_title">Συνεισφέροντες</string>
     <string name="contributing_orgs_title">Συνεισφέροντες Οργανισμοί</string>

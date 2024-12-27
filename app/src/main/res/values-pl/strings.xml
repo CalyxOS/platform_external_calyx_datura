@@ -17,7 +17,6 @@
     <string name="searchbar_hint">Szukaj aplikacji</string>
     <string name="custom_settings">Ustawienia własne</string>
     <string name="no_internet">Aplikacja nie pyta o pozwolenie na dostęp do Internetu</string>
-    <string name="about_foss">Jest on licencjonowany i rozpowszechniany na podstawie<a href="https://www.apache.org/licenses/LICENSE-2.0">Licencja Apache 2.0</a>. Informacje o poszczególnych właścicielach praw autorskich znajdują się w plikach.</string>
     <string name="version">Wersja: <xliff:g id="version">%1$s</xliff:g></string>
     <string name="contributors_title">Współtwórcy</string>
     <string name="contributing_orgs_title">Organizacje współpracujące</string>

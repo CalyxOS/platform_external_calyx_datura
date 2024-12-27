@@ -13,7 +13,6 @@
     <string name="sort_by_name">이름 순으로 정렬</string>
     <string name="about_summary">Android 내장 네트워크 API를 이용한 방화벽 애플리케이션입니다.</string>
     <string name="no_internet">앱이 인터넷 권한을 요청하지 않습니다</string>
-    <string name="about_foss">It is licensed and distributed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>. 개별 저작권 소유자의 정보는 파일을 참조하십시오.</string>
     <string name="work_profile_help">직장 앱에 대한 방화벽 설정은 개인 프로필의 방화벽 앱에서 관리됩니다. 직장 앱에는 서류가방 아이콘이 표시됩니다.</string>
     <string name="default_settings">기본 설정</string>
     <string name="app_logo">앱 로고</string>

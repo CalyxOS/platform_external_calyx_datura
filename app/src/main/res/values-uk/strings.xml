@@ -13,7 +13,6 @@
     <string name="allow_mobile_data">Дозволити мобільні дані</string>
     <string name="about_summary">Програма-брандмауер використовує внутрішній мережевий API від Android.</string>
     <string name="default_settings">Типові налаштування</string>
-    <string name="about_foss">Ліцензований і поширюється за ліцензією <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>. Інформацію про окремих власників авторських прав міститься у файлах.</string>
     <string name="work_profile_help">Налаштування брандмауера для робочих програм керуються у програмі Firewall у Вашому особистому профілі. Робочі програми мають значок портфеля.</string>
     <string name="app_logo">Логотип програми</string>
     <string name="searchbar_hint">Пошук програм</string>
