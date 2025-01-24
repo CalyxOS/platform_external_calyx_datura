@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c8423f50_55bfb02b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000065
+      },
+      "writtenOn": "2025-01-24T05:56:46Z",
+      "side": 1,
+      "message": "Needs JDK 21 to build; JDK 21 is already the new default for Android Studio since Android 15 support was released in AGP.",
+      "revId": "f791b3b98f584822963f4df838ad3801b6dc11c0",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    }
+  ]
+}
