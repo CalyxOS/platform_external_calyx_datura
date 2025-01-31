@@ -22,7 +22,6 @@
     <string name="contributors_summary">ניתן למצוא ב־GitLab את <a href="https://gitlab.com/CalyxOS/platform_external_calyx_datura/-/graphs/HEAD">רשמת המתנדבים</a>.</string>
     <string name="contributing_orgs_title">ארגונים תורמים</string>
     <string name="contributing_orgs_summary"><a href="https://www.calyxinstitute.org">מכון Calyx</a> על השימוש ב־<a href="https://calyxos.org">CalyxOS</a></string>
-    <string name="about_foss">מופץ בכפוף לרישיון <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0</a>. בקבצים עצמם מופיעים פרטי בעלי זכויות היוצרים.</string>
     <string name="work_profile_help">הגדרות חומת האש ליישומוני העבודה מנוהלים ביישומון חומת האש של הפרופיל שלך. על יישומונים העבודה מופיע סמל של מזוודה.</string>
     <string name="settings">הגדרות</string>
     <string name="pref_default_internet_title">לאפשר אינטרנט להתקנות חדשות</string>
