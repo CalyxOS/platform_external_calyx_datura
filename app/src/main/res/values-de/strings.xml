@@ -22,7 +22,6 @@
     <string name="contributing_orgs_title">Mitwirkende Organisationen</string>
     <string name="work_profile_help">Firewall-Einstellungen für geschäftliche Apps werden in der Firewall-App deines persönlichen Profils verwaltet. Geschäftliche Apps sind mit einem Aktenkoffersymbol gekennzeichnet.</string>
     <string name="app_logo">App-Logo</string>
-    <string name="about_foss">Es ist lizenziert und wird unter der <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0-Lizenz</a> vertrieben. Informationen zu den einzelnen Urheberrechtsinhabern finden Sie in den Dateien.</string>
     <string name="contributing_orgs_summary"><a href="https://www.calyxinstitute.org">Calyx Institut</a> zur Verwendung in <a href="https://calyxos.org">CalyxOS</a></string>
     <string name="settings">Einstellungen</string>
     <string name="notifications">Benachrichtigungen</string>

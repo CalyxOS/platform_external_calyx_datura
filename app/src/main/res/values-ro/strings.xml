@@ -23,7 +23,6 @@
     <string name="app_name">Firewall Datura</string>
     <string name="app_short_name">firewall</string>
     <string name="searchbar_hint">Căutare aplicații</string>
-    <string name="about_foss">Este licențiat și distribuit sub <a href="https://www.apache.org/licenses/LICENSE-2.0">Licența Apache 2.0</a>. Consultă fișierele pentru informațiile individuale ale deținătorului drepturilor de autor.</string>
     <string name="settings">Setări</string>
     <string name="notification_channel_alert">Alerte</string>
     <string name="internet_access_denied_title">Acces la internet interzis!</string>

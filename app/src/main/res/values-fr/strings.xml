@@ -19,7 +19,6 @@
     <string name="version">Version : <xliff:g id="version">%1$s</xliff:g></string>
     <string name="contributors_title">Contributeurs</string>
     <string name="no_internet">L\'application ne demande pas l\'autorisation d\'utiliser Internet</string>
-    <string name="about_foss">Elle est distribuée sous la <a href="https://www.apache.org/licenses/LICENSE-2.0">license Apache 2.0</a>. Voir les fichiers pour les droits d\'auteur individuels</string>
     <string name="contributing_orgs_title">Organisations participantes</string>
     <string name="contributors_summary">Voir Gitlab pour la <a href="https://gitlab.com/CalyxOS/platform_external_calyx_datura/-/graphs/HEAD">liste de contributeurs</a>.</string>
     <string name="work_profile_help">Les paramètres du pare-feu pour les applications professionnelles sont gérés dans l’application Pare-feu de votre profil personnel. Les applications professionnelles comportent une icône de porte-documents.</string>

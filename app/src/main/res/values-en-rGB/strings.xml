@@ -8,7 +8,6 @@
     <string name="about_summary">A firewall application using Android\'s internal network API.</string>
     <string name="no_internet">App does not ask for Internet permission</string>
     <string name="about">About</string>
-    <string name="about_foss">It is licensed and distributed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 Licence</a>. See files for individual copyright holder\'s information.</string>
     <string name="allow_background_data">Allow background network access</string>
     <string name="system_apps">System apps</string>
     <string name="app_logo">App\'s logo</string>

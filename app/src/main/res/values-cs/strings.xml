@@ -15,7 +15,6 @@
     <string name="app_logo">Logo aplikace</string>
     <string name="custom_settings">Vlastní nastavení</string>
     <string name="version">Verze: <xliff:g id="version">%1$s</xliff:g></string>
-    <string name="about_foss">Je licencována a distribuována pod licencí <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache 2.0 License</a>. Informace o jednotlivých držitelích autorských práv naleznete v souborech.</string>
     <string name="searchbar_hint">Hledat aplikace</string>
     <string name="default_settings">Výchozí nastavení</string>
     <string name="no_internet">Aplikace nežádá o oprávnění k internetu</string>
