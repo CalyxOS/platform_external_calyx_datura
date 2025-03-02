@@ -1,2 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Datura مۇداپىئە تام</string>
+    <string name="app_short_name">مۇداپىئە تام</string>
+    <string name="version">نەشرى: <xliff:g id="version">%1$s</xliff:g></string>
+    <string name="contributing_orgs_summary"><a href="https://calyxos.org">CalyxOS</a> دا ئىشلىتىدىغان <a href="https://www.calyxinstitute.org">Calyx ئىنستىتۇتى</a></string>
+    <string name="monitoring_new_app_installs_desc">مۇداپىئە تام يېڭى ئورنىتىلغان ئەپنى كۆزىتىۋاتىدۇ كۆڭۈلدىكى ئەھۋالدا ئىنتېرنېتنى زىيارەت قىلىشنى رەت قىلىدۇ!</string>
+    <string name="internet_access_denied_title">ئىنتېرنېت زىيارىتى رەت قىلىندى!</string>
+    <string name="allow">يول قوي</string>
+    <string name="notifications">ئۇقتۇرۇش</string>
+    <string name="notifications_desc">يېڭى ئورنىتىلغان ئەپنىڭ ئىنتېرنېت زىيارەت ئىجازىتىنىڭ ئۇقتۇرۇشى</string>
+    <string name="internet_access_denied_desc"><xliff:g id="app_name">%1$s</xliff:g> نىڭ ئىنتېرنېت زىيارەت ئىجازىتى يوق. ئۇنىڭغا يول قويامسىز؟</string>
+    <string name="app_logo">ئەپ تۇغى</string>
+    <string name="searchbar_hint">ئەپ ئىزدە</string>
+    <string name="default_settings">كۆڭۈلدىكى تەڭشەك</string>
+    <string name="custom_settings">ئىختىيارى تەڭشەك</string>
+    <string name="no_internet">ئەپ ئىنتېرنېت ئىجازىتىنى تەلەپ قىلمايدۇ</string>
+    <string name="allow_background_data">ئارقا سۇپىدا تور زىيارىتىگە يول قويىدۇ</string>
+    <string name="allow_wifi_data">Wi-Fi سانلىق مەلۇماتىغا يول قويىدۇ</string>
+    <string name="allow_mobile_data">كۆچمە سانلىق مەلۇماتقا يول قويىدۇ</string>
+    <string name="allow_vpn_data">VPN سانلىق مەلۇماتقا يول قويىدۇ</string>
+    <string name="sort_by_last_used">ئاخىرقى ئىشلىتىش ۋاقتى بويىچە تەرتىپلە</string>
+    <string name="sort_by_name">ئات بويىچە تەرتىپلە</string>
+    <string name="installed_apps">ئورنىتىلغان ئەپلەر</string>
+    <string name="system_apps">سىستېما ئەپ</string>
+    <string name="about">ھەققىدە</string>
+    <string name="about_summary">مۇداپىئە تام ئەپى Android نىڭ ئىچكى تور API ئىشلىتىدۇ.</string>
+    <string name="contributors_title">تۆھپىكارلار</string>
+    <string name="contributors_summary"><a href="https://gitlab.com/CalyxOS/platform_external_calyx_datura/-/graphs/HEAD">تۆھپىكارلار تىزىمى</a>نى GitLab تىن كۆرۈڭ.</string>
+    <string name="contributing_orgs_title">تۆھپىكار ئورۇنلار</string>
+    <string name="work_profile_help">خىزمەت ئەپنىڭ مۇداپىئە تام تەڭشىكى شەخسىي تەرجىمىھالنىڭ مۇداپىئە تام ئەپتە باشقۇرۇلىدۇ. خىزمەت ئەپنىڭ ھۆججەت سومكا سىنبەلگىسى بار.</string>
+    <string name="settings">تەڭشەك</string>
+    <string name="pref_default_internet_title">يېڭى ئورنىتىلغان ئەپنىڭ ئىنتېرنېت باغلىنىشىغا يول قويىدۇ</string>
+    <string name="pref_default_internet_summary">كۆڭۈلدىكى ئەھۋالدا يېڭى ئورنىتىلغان ئەپنىڭ ئىنتېرنېتنى زىيارەت قىلىشىغا يول قويۇلىدۇ</string>
+    <string name="notification_channel_fgs">ئالدى سۇپا مۇلازىمىتى</string>
+    <string name="notification_channel_alert">ئاگاھلاندۇرۇش</string>
+    <string name="monitoring_new_app_installs_title">يېڭى ئەپ ئورنىتىشنى كۆزىتىدۇ</string>
+</resources>
