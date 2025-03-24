@@ -16,6 +16,29 @@
       "message": "Breaks access to system APIs included using libs",
       "revId": "5b782c296090cbaf84e61f5f8608645625c5e9a5",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d37aa88e_ff3a5d99",
+        "filename": "gradle/libs.versions.toml",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000065
+      },
+      "writtenOn": "2025-03-24T08:32:44Z",
+      "side": 1,
+      "message": "This is breaking access to system APIs using jar files in libs directory",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 20
+      },
+      "revId": "5b782c296090cbaf84e61f5f8608645625c5e9a5",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
