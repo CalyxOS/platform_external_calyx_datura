@@ -5,19 +5,19 @@
 
 [versions]
 appcompat = "1.7.0"
-androidGradlePlugin = "8.8.1"
+androidGradlePlugin = "8.9.0"
 androidx-junit = "1.2.1"
-constraint = "2.2.0"
+constraint = "2.2.1"
 core = "1.15.0"
 espresso = "3.6.1"
-hilt = "2.55"
-kotlin = "2.1.10"
-ksp = "2.1.10-1.0.29"
+hilt = "2.56"
+kotlin = "2.1.20"
+ksp = "2.1.20-1.0.31"
 ktlint = "11.6.1"
 junit = "4.13.2"
 lifecycle = "2.8.7"
 material = "1.12.0"
-navigation = "2.8.7"
+navigation = "2.8.9"
 preference = "1.2.1"
 
 [libraries]
