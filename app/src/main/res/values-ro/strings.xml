@@ -28,4 +28,11 @@
     <string name="internet_access_denied_title">Acces la internet interzis!</string>
     <string name="allow">Permite</string>
     <string name="notifications">Notificări</string>
+    <string name="pref_default_internet_title">Permite accesul la internet pentru noi instalări</string>
+    <string name="pref_default_internet_summary">Aplicațiile noi Instalate au permise să acceseze internetul în mod implicit</string>
+    <string name="notification_channel_fgs">Serviciu de prim plan</string>
+    <string name="monitoring_new_app_installs_title">Monitorizarea instalărilor de aplicații noi</string>
+    <string name="monitoring_new_app_installs_desc">Firewall monitorizează acum noile instalări de aplicații pentru a refuza accesul la internet în mod implicit!</string>
+    <string name="internet_access_denied_desc"><xliff:g id="app_name">%1$s</xliff:g> nu are acces la internet. Vrei să-l acorzi?</string>
+    <string name="notifications_desc">Notificări privind accesul la internet pentru aplicațiile noi instalate</string>
 </resources>
