@@ -1,2 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Datura Tűzfal</string>
+    <string name="allow_vpn_data">VPN adat engedélyezése</string>
+    <string name="sort_by_last_used">Legutolsó használat szerinti rendezés</string>
+    <string name="sort_by_name">Név szerint rendezés</string>
+    <string name="app_short_name">Tűzfal</string>
+    <string name="allow_background_data">Háttérben hálózati hozzáférés engedélyezése</string>
+    <string name="allow_wifi_data">Wi-Fi adat engedélyezése</string>
+    <string name="installed_apps">Telepített appok</string>
+    <string name="about">Névjegy</string>
+    <string name="about_summary">Egy tűzfal applikáció, amely az Android belső hálózati API-ját használja.</string>
+    <string name="allow_mobile_data">Mobil adat engedélyezése</string>
+    <string name="system_apps">Rendszer appok</string>
+    <string name="default_settings">Alap beállítások</string>
+    <string name="app_logo">App logója</string>
+    <string name="searchbar_hint">Appok keresése</string>
+    <string name="custom_settings">Egyéni beállítások</string>
+    <string name="no_internet">App nem kér internet hozzáférés engedélyt</string>
+    <string name="version">Verzió: <xliff:g id="verzió">%1$s</xliff:g></string>
+    <string name="contributors_title">Közreműködők</string>
+    <string name="contributing_orgs_title">Közreműködő Szervezetek</string>
+    <string name="monitoring_new_app_installs_desc">A tűzfal immáron figyeli az újonnan telepített appokat, megvonva tőlük az internet hozzáférést alapból!</string>
+    <string name="internet_access_denied_desc"><xliff:g id="app_name">%1$s</xliff:g> nem rendelkezik internet hozzáféréssel. Engedélyezni kívánja?</string>
+    <string name="notifications">Értesítések</string>
+    <string name="allow">Engedélyez</string>
+    <string name="notifications_desc">Az újonnan telepített appok internet hozzáférésével kapcsolatos értesítések</string>
+    <string name="contributors_summary">Tekintse meg a GitLab-et a <a href="https://gitlab.com/CalyxOS/platform_external_calyx_datura/-/graphs/HEAD">közreműködők listájáért</a>.</string>
+    <string name="contributing_orgs_summary"><a href="https://www.calyxinstitute.org">Calyx Intézet</a> fáradozásai a <a href="https://calyxos.org">CalyxOS</a>-ért</string>
+    <string name="work_profile_help">A munka appok tűzfal beállításai a saját profilban levő Tűzfalnál találhatóak. A munka appoknál egy aktatáska ikon jelenik meg.</string>
+    <string name="settings">Beállítások</string>
+    <string name="pref_default_internet_summary">Az újonnan telepített appok alapból engedélyt kapnak az internethez</string>
+    <string name="pref_default_internet_title">Internet engedélyezése új appokhoz</string>
+    <string name="notification_channel_fgs">Előtéri szolgáltatás</string>
+    <string name="notification_channel_alert">Riasztások</string>
+    <string name="monitoring_new_app_installs_title">Új app telepítések ellenőrzése</string>
+    <string name="internet_access_denied_title">Internet hozzáférés megtagadva!</string>
+</resources>

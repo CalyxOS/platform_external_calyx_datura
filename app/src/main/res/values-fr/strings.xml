@@ -11,7 +11,7 @@
     <string name="sort_by_last_used">Trier par dernière utilisation</string>
     <string name="sort_by_name">Trier par nom</string>
     <string name="about">À propos</string>
-    <string name="about_summary">Une application de pare-feu utilisant l\'API réseau interne d\'Android.</string>
+    <string name="about_summary">Application de pare-feu utilisant l\'API réseau interne d\'Android.</string>
     <string name="default_settings">Paramètres par défaut</string>
     <string name="app_logo">Logo de l\'application</string>
     <string name="searchbar_hint">Chercher des applications</string>
@@ -20,6 +20,19 @@
     <string name="contributors_title">Contributeurs</string>
     <string name="no_internet">L\'application ne demande pas l\'autorisation d\'utiliser Internet</string>
     <string name="contributing_orgs_title">Organisations participantes</string>
-    <string name="contributors_summary">Voir Gitlab pour la <a href="https://gitlab.com/CalyxOS/platform_external_calyx_datura/-/graphs/HEAD">liste de contributeurs</a>.</string>
+    <string name="contributors_summary">Veuillez consulter Gitlab pour la <a href="https://gitlab.com/CalyxOS/platform_external_calyx_datura/-/graphs/HEAD">liste des contributeurs</a>.</string>
     <string name="work_profile_help">Les paramètres du pare-feu pour les applications professionnelles sont gérés dans l’application Pare-feu de votre profil personnel. Les applications professionnelles comportent une icône de porte-documents.</string>
+    <string name="pref_default_internet_summary">Les applications nouvellement installées sont autorisées à accéder à Internet par défaut</string>
+    <string name="notification_channel_fgs">Service d\'avant-plan</string>
+    <string name="notification_channel_alert">Alertes</string>
+    <string name="monitoring_new_app_installs_title">Surveillance des nouvelles installations d\'applications</string>
+    <string name="monitoring_new_app_installs_desc">Le pare-feu surveille désormais les nouvelles installations d\'applications afin de refuser l\'accès à Internet par défaut !</string>
+    <string name="internet_access_denied_title">Accès à Internet refusé !</string>
+    <string name="allow">Autoriser</string>
+    <string name="internet_access_denied_desc"><xliff:g id="app_name">%1$s</xliff:g> n\'a pas d\'accès à Internet. Voulez-vous l\'autoriser ?</string>
+    <string name="notifications">Notifications</string>
+    <string name="notifications_desc">Notifications concernant l\'autorisation d\'accès à Internet pour les applications nouvellement installées</string>
+    <string name="contributing_orgs_summary"><a href="https://www.calyxinstitute.org">Calyx Institute</a> pour une utilisation dans <a href="https://calyxos.org">CalyxOS</a></string>
+    <string name="settings">Paramètres</string>
+    <string name="pref_default_internet_title">Autoriser l\'accès à Internet pour les nouvelles installations</string>
 </resources>
