@@ -26,13 +26,13 @@
     <string name="settings">Configurações</string>
     <string name="notification_channel_alert">Alertas</string>
     <string name="monitoring_new_app_installs_title">Monitorando novos apps</string>
-    <string name="monitoring_new_app_installs_desc">A firewall está monitorando novos apps para negar o acesso à internet por padrão!</string>
-    <string name="internet_access_denied_title">Acesso à internet negado!</string>
-    <string name="internet_access_denied_desc"><xliff:g id="app_name">%1$s</xliff:g> não tem acesso à internet. Deseja permiti-lo?</string>
-    <string name="allow">Permitir</string>
+    <string name="monitoring_new_app_installs_desc">A firewall está monitorando novos apps para bloquear o acesso à internet por padrão!</string>
+    <string name="internet_access_denied_title">Acesso à internet bloqueado!</string>
+    <string name="internet_access_denied_desc"><xliff:g id="app_name">%1$s</xliff:g> não tem acesso à internet. Deseja desbloqueá-lo?</string>
+    <string name="allow">Desbloquear</string>
     <string name="notifications">Notificações</string>
     <string name="pref_default_internet_summary">Apps novos poderão usar a internet por padrão</string>
-    <string name="pref_default_internet_title">Permitir internet para novos apps</string>
+    <string name="pref_default_internet_title">Permitir internet em apps novos</string>
     <string name="notification_channel_fgs">Serviço de primeiro plano</string>
     <string name="notifications_desc">Notificações sobre o acesso à internet de novos apps</string>
 </resources>

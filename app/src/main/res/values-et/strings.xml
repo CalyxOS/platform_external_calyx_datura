@@ -1,2 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="system_apps">Süsteemirakendused</string>
+    <string name="no_internet">Rakendus ei küsi luba interneti kasutamiseks</string>
+    <string name="work_profile_help">Töörakenduste tulemüüri seadeid saab hallata isikliku profiili tulemüüri rakenduses. Töörakendustel on portfelli ikoon.</string>
+    <string name="app_name">Datura tulemüür</string>
+    <string name="app_short_name">Tulemüür</string>
+    <string name="allow_background_data">Luba võrgule juurdepääs taustal</string>
+    <string name="allow_mobile_data">Luba mobiilne andmeside</string>
+    <string name="allow_wifi_data">Luba WiFi ühendus</string>
+    <string name="about_summary">Tulemüürirakendus, mis kasutab Androidi sisevõrgu API-t.</string>
+    <string name="app_logo">Rakenduse logo</string>
+    <string name="searchbar_hint">Otsi rakendusi</string>
+    <string name="default_settings">Vaikeseaded</string>
+    <string name="custom_settings">Kohandatud seaded</string>
+    <string name="allow_vpn_data">Luba VPN ühendus</string>
+    <string name="sort_by_last_used">Järjesta viimase kasutuse järgi</string>
+    <string name="sort_by_name">Järjesta nime järgi</string>
+    <string name="installed_apps">Paigaldatud rakendused</string>
+    <string name="about">Teave</string>
+    <string name="pref_default_internet_summary">Uutel paigaldatud rakendustel on internetiühendus vaikimisi lubatud</string>
+    <string name="version">Versioon: <xliff:g id="version">%1$s</xliff:g></string>
+    <string name="contributors_title">Kaastöölised</string>
+    <string name="contributing_orgs_title">Panustavad organisatsioonid</string>
+    <string name="settings">Seaded</string>
+    <string name="pref_default_internet_title">Luba uute paigalduste jaoks internet</string>
+    <string name="monitoring_new_app_installs_title">Uute rakenduste paigaldamise jälgimine</string>
+    <string name="monitoring_new_app_installs_desc">Tulemüür jälgib nüüd uute rakenduste paigaldamist, et vaikimisi internetiühendus keelata!</string>
+    <string name="notification_channel_alert">Hoiatused</string>
+    <string name="internet_access_denied_title">Internetiühendus keelatud!</string>
+    <string name="internet_access_denied_desc">Rakendusel <xliff:g id="app_name">%1$s</xliff:g> puudub internetiühendus. Kas lubada see?</string>
+    <string name="allow">Luba</string>
+    <string name="notifications">Märguanded</string>
+    <string name="notifications_desc">Uute rakenduste internetiühenduse märguanded</string>
+    <string name="notification_channel_fgs">Esiplaaniteenus</string>
+    <string name="contributors_summary">Gitlabist leiad <a href="https://gitlab.com/CalyxOS/platform_external_calyx_datura/-/graphs/HEAD">kaastööliste nimekirja</a>.</string>
+</resources>
