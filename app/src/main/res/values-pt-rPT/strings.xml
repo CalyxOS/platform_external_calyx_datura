@@ -1,38 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_name">Datura Firewall</string>
+    <string name="app_name">Firewall Datura</string>
     <string name="app_short_name">Firewall</string>
     <string name="installed_apps">Apps instaladas</string>
     <string name="system_apps">Apps do sistema</string>
     <string name="allow_background_data">Permitir acesso à rede em segundo plano</string>
-    <string name="allow_wifi_data">Permitir dados de Wi-Fi</string>
-    <string name="allow_mobile_data">Permitir dados móveis</string>
-    <string name="allow_vpn_data">Permitir dados VPN</string>
-    <string name="sort_by_last_used">Classificar por último usado</string>
-    <string name="sort_by_name">Classificar por nome</string>
+    <string name="allow_wifi_data">Permitir no Wi-Fi</string>
+    <string name="allow_mobile_data">Permitir nos dados móveis</string>
+    <string name="allow_vpn_data">Permitir na VPN</string>
+    <string name="sort_by_last_used">Ordenar pelo último usado</string>
+    <string name="sort_by_name">Ordenar pelo nome</string>
     <string name="about">Sobre</string>
     <string name="about_summary">Uma aplicação de firewall que usa a API de rede interna do Android.</string>
     <string name="searchbar_hint">Pesquisar apps</string>
     <string name="app_logo">Logo da app</string>
-    <string name="custom_settings">Configurações modificadas</string>
-    <string name="no_internet">A app não pede pela permissão de internet</string>
+    <string name="custom_settings">Definições modificadas</string>
+    <string name="no_internet">A app não solicita a permissão de internet</string>
     <string name="notification_channel_alert">Alertas</string>
     <string name="monitoring_new_app_installs_title">Monitorar novas apps</string>
     <string name="version">Versão: <xliff:g id="version">%1$s</xliff:g></string>
-    <string name="work_profile_help">As configurações de firewall para apps de trabalho são configuradas no app Firewall do seu perfil pessoal. Apps de trabalho têm um ícone de maleta neles.</string>
-    <string name="settings">Configurações</string>
-    <string name="allow">Permitir</string>
+    <string name="work_profile_help">As definições de firewall para apps de trabalho são configuradas na app Firewall do seu perfil pessoal. Apps de trabalho têm um ícone de maleta nelas.</string>
+    <string name="settings">Definições</string>
+    <string name="allow">Desbloquear</string>
     <string name="notifications">Notificações</string>
-    <string name="default_settings">Configurações padrão</string>
+    <string name="default_settings">Definições padrão</string>
     <string name="contributors_title">Colaboradores</string>
     <string name="contributors_summary">Veja a <a href="https://gitlab.com/CalyxOS/platform_external_calyx_datura/-/graphs/HEAD">lista de colaboradores</a> no GitLab.</string>
     <string name="contributing_orgs_title">Organizações Colaboradoras</string>
     <string name="contributing_orgs_summary"><a href="https://www.calyxinstitute.org">Instituto Calyx</a> para o uso no <a href="https://calyxos.org">CalyxOS</a></string>
-    <string name="pref_default_internet_title">Permitir internet para novos apps</string>
-    <string name="pref_default_internet_summary">Apps novos poderão usar a internet por padrão</string>
+    <string name="pref_default_internet_title">Permitir internet para novas apps</string>
+    <string name="pref_default_internet_summary">Apps novas poderão usar a internet por padrão</string>
     <string name="notification_channel_fgs">Serviço de primeiro plano</string>
-    <string name="monitoring_new_app_installs_desc">A firewall monitora novas apps para negar o acesso à internet por padrão!</string>
-    <string name="internet_access_denied_title">Acesso à internet negado!</string>
-    <string name="internet_access_denied_desc"><xliff:g id="app_name">%1$s</xliff:g> não tem acesso à internet. Deseja permiti-lo?</string>
-    <string name="notifications_desc">Notificações sobre o acesso à internet de novos apps</string>
+    <string name="monitoring_new_app_installs_desc">A firewall monitora novas apps para bloquear o acesso à internet por padrão!</string>
+    <string name="internet_access_denied_title">Acesso à internet bloqueado!</string>
+    <string name="internet_access_denied_desc"><xliff:g id="app_name">%1$s</xliff:g> não tem acesso à internet. Deseja desbloqueá-lo?</string>
+    <string name="notifications_desc">Notificações sobre o acesso à internet de novas apps</string>
 </resources>
