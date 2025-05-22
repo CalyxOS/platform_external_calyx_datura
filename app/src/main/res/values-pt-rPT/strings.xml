@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="app_name">Datura Firewall</string>
+    <string name="app_name">Firewall Datura</string>
     <string name="app_short_name">Firewall</string>
     <string name="installed_apps">Apps instaladas</string>
     <string name="system_apps">Apps do sistema</string>
