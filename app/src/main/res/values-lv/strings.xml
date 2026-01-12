@@ -1,2 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_name">Datura ugunsmūris</string>
+    <string name="app_short_name">Ugunsmūris</string>
+    <string name="searchbar_hint">Meklēt lietotnes</string>
+</resources>

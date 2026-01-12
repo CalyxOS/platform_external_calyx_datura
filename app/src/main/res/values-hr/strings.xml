@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="installed_apps">Instalirane aplikacije</string>
     <string name="app_name">Datura Firewall</string>
     <string name="system_apps">Aplikacije sustava</string>
     <string name="app_short_name">Firewall</string>
@@ -21,4 +20,17 @@
     <string name="notification_channel_alert">Upozorenja</string>
     <string name="allow">Dozvoli</string>
     <string name="notifications">Obavijesti</string>
+    <string name="no_internet">Aplikacija ne traži dozvolu za pristup internetu</string>
+    <string name="about">Informacije</string>
+    <string name="contributors_summary">Za <a href="https://gitlab.com/CalyxOS/platform_external_calyx_datura/-/graphs/HEAD">popis suradnika</a> pogledaj GitLab.</string>
+    <string name="contributing_orgs_title">Suradničke organizacije</string>
+    <string name="work_profile_help">Postavkama vatrozida za poslovne aplikacije upravlja se u aplikaciji Vatrozid u tvom osobnom profilu. Poslovne aplikacije imaju ikonu aktovke.</string>
+    <string name="pref_default_internet_title">Dozvoli internet za nove instalacije</string>
+    <string name="pref_default_internet_summary">Nove instalacije aplikacija standardno imaju pristup internetu</string>
+    <string name="notification_channel_fgs">Usluga u prvom planu</string>
+    <string name="monitoring_new_app_installs_title">Praćenje novih instalacija aplikacija</string>
+    <string name="monitoring_new_app_installs_desc">Vatrozid sada prati instalacije novih aplikacija kako bi standardno uskratio pristup internetu!</string>
+    <string name="internet_access_denied_title">Pristup internetu je odbijen!</string>
+    <string name="internet_access_denied_desc"><xliff:g id="app_name">%1$s</xliff:g> nema pristup internetu. Želiš li dozvoliti pristup?</string>
+    <string name="notifications_desc">Obavijesti o pristupu internetu za instalacije novih aplikacija</string>
 </resources>

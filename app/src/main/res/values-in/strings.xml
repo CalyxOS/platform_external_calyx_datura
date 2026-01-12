@@ -1,2 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="app_name">Firewall Datura</string>
+    <string name="app_short_name">Firewall</string>
+    <string name="app_logo">Logo aplikasi</string>
+    <string name="searchbar_hint">Cari aplikasi</string>
+    <string name="default_settings">Setelan default</string>
+    <string name="custom_settings">Setelan kustom</string>
+    <string name="no_internet">Aplikasi tidak meminta izin internet</string>
+    <string name="allow_background_data">Izinkan akses jaringan latar belakang</string>
+    <string name="allow_wifi_data">Izinkan data Wi-Fi</string>
+    <string name="allow_mobile_data">Izinkan data seluler</string>
+    <string name="allow_vpn_data">Izinkan data VPN</string>
+    <string name="sort_by_last_used">Urutkan berdasarkan terakhir digunakan</string>
+    <string name="sort_by_name">Urutkan berdasarkan nama</string>
+    <string name="installed_apps">Aplikasi terinstal</string>
+    <string name="system_apps">Aplikasi sistem</string>
+    <string name="about">Tentang</string>
+    <string name="about_summary">Aplikasi firewall yang menggunakan API jaringan internal Android.</string>
+    <string name="version">Versi: <xliff:g id="version">%1$s</xliff:g></string>
+    <string name="contributors_title">Kontributor</string>
+    <string name="contributors_summary">Silakan lihat GitLab untuk <a href="https://gitlab.com/CalyxOS/platform_external_calyx_datura/-/graphs/HEAD">daftar kontributor</a>.</string>
+    <string name="contributing_orgs_title">Organisasi Kontributor</string>
+    <string name="contributing_orgs_summary"><a href="https://www.calyxinstitute.org">Calyx Institute</a> untuk digunakan di <a href="https://calyxos.org">CalyxOS</a></string>
+    <string name="work_profile_help">Setelan firewall untuk aplikasi kerja dikelola di aplikasi Firewall pada profil pribadi Anda. Aplikasi kerja memiliki ikon koper pada aplikasi tersebut.</string>
+    <string name="settings">Setelan</string>
+    <string name="pref_default_internet_title">Izinkan internet untuk instalasi baru</string>
+    <string name="pref_default_internet_summary">Instalasi aplikasi baru diizinkan mengakses internet secara default</string>
+    <string name="notification_channel_fgs">Layanan latar depan</string>
+    <string name="notification_channel_alert">Peringatan</string>
+    <string name="monitoring_new_app_installs_title">Memantau instalasi aplikasi baru</string>
+    <string name="monitoring_new_app_installs_desc">Firewall kini memantau instalasi aplikasi baru untuk menolak akses internet secara default!</string>
+    <string name="internet_access_denied_title">Akses internet ditolak!</string>
+    <string name="internet_access_denied_desc"><xliff:g id="app_name">%1$s</xliff:g> tidak memiliki akses internet. Apakah Anda ingin mengizinkannya?</string>
+    <string name="allow">Izinkan</string>
+    <string name="notifications">Notifikasi</string>
+    <string name="notifications_desc">Notifikasi terkait akses internet untuk instalasi aplikasi baru</string>
+</resources>
