@@ -39,6 +39,30 @@
       },
       "revId": "5b782c296090cbaf84e61f5f8608645625c5e9a5",
       "serverId": "35266860-6252-469c-a67d-185064479fc0"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eb279718_bd624900",
+        "filename": "gradle/libs.versions.toml",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000003
+      },
+      "writtenOn": "2026-02-23T20:35:43Z",
+      "side": 1,
+      "message": "Seedvault was using\n\n```\nkotlin \u003d { strictly \u003d \"2.1.10\" }\nksp \u003d \"2.1.10-1.0.31\"\n```\n\nand it still worked fine. Only upgrading to the following broke it:\n\n```\nkotlin \u003d { strictly \u003d \"2.2.0\" }\nksp \u003d \"2.2.0-2.0.2\"\n```",
+      "parentUuid": "d37aa88e_ff3a5d99",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 15,
+        "endChar": 20
+      },
+      "revId": "5b782c296090cbaf84e61f5f8608645625c5e9a5",
+      "serverId": "35266860-6252-469c-a67d-185064479fc0"
     }
   ]
 }
