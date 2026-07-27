@@ -15,7 +15,7 @@
     <string name="app_logo">Logo do app</string>
     <string name="searchbar_hint">Pesquisar apps</string>
     <string name="custom_settings">Configurações modificadas</string>
-    <string name="no_internet">O app solicita a permissão de internet</string>
+    <string name="no_internet">O app não solicita a permissão de internet</string>
     <string name="version">Versão: <xliff:g id="version">%1$s</xliff:g></string>
     <string name="contributors_title">Colaboradores</string>
     <string name="contributing_orgs_title">Organizações Colaboradoras</string>

@@ -1,2 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <string name="app_name">جدار Datura الناري</string>
+    <string name="app_short_name">جدار ناري</string>
+    <string name="app_logo">شعار التطبيق</string>
+    <string name="searchbar_hint">ابحث عن التطبيقات</string>
+    <string name="default_settings">الإعدادات الافتراضية</string>
+    <string name="custom_settings">الاعدادات المخصصة</string>
+    <string name="no_internet">التطبيق لا يطلب إذن الإنترنت</string>
+    <string name="allow_background_data">اسمح بالوصول للشبكة في الخلفية</string>
+    <string name="allow_wifi_data">اسمح ببيانات الWi-Fi</string>
+    <string name="allow_mobile_data">اسمح ببيانات الهاتف</string>
+    <string name="allow_vpn_data">اسمح ببيانات ال VPN</string>
+    <string name="sort_by_last_used">تصنيف حسب الأحدث استخدامًا</string>
+    <string name="sort_by_name">تصنيف حسب الاسم</string>
+    <string name="installed_apps">التطبيقات المثبتة</string>
+    <string name="system_apps">تطبيقات النظام</string>
+    <string name="about">عن</string>
+    <string name="about_summary">تطبيق جدار ناري يستخدم الAPI الخاص بشبكة انترنت Android</string>
+</resources>
