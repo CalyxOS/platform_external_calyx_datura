@@ -22,7 +22,7 @@
     <string name="contributors_title">Учасники</string>
     <string name="contributors_summary">Будь ласка, зверніться до GitLab, щоби дізнатися про <a href="https://gitlab.com/CalyxOS/platform_external_calyx_datura/-/graphs/HEAD">учасників</a>.</string>
     <string name="contributing_orgs_title">Організації-учасники</string>
-    <string name="contributing_orgs_summary"><a href="https://www.calyxinstitute.org">Calyx Institute</a> для використання в<a href="https://calyxos.org">CalyxOS</a></string>
+    <string name="contributing_orgs_summary"><a href="https://www.calyxinstitute.org">Calyx Institute</a> для використання у <a href="https://calyxos.org">CalyxOS</a></string>
     <string name="settings">Налаштування</string>
     <string name="pref_default_internet_summary">Стандартно доступ до інтернету дозволений для нових додатків</string>
     <string name="notification_channel_fgs">Сервіс переднього плану</string>
