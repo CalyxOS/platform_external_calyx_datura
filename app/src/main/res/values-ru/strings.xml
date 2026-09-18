@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="allow_wifi_data">Разрешить передачу данных по Wi-Fi</string>
     <string name="allow_mobile_data">Разрешить мобильные данные</string>
     <string name="sort_by_name">Сортировать по имени</string>
@@ -12,4 +12,26 @@
     <string name="allow_vpn_data">Разрешить данные VPN</string>
     <string name="sort_by_last_used">Сортировать по последнему использованию</string>
     <string name="about_summary">Приложение брандмауэра, использующее API сети Android.</string>
+    <string name="app_logo">Логотип приложения</string>
+    <string name="searchbar_hint">Поиск приложений</string>
+    <string name="default_settings">Стандартные настройки</string>
+    <string name="custom_settings">Кастомные настройки</string>
+    <string name="no_internet">Приложение не запрашивает разрешение на доступ к интернету</string>
+    <string name="version">Версия: <xliff:g id="version">%1$s</xliff:g></string>
+    <string name="contributors_title">Контрибьюторы</string>
+    <string name="contributors_summary">Посмотреть <a href="https://gitlab.com/CalyxOS/platform_external_calyx_datura/-/graphs/HEAD">список участников можно на GitLab</a>.</string>
+    <string name="contributing_orgs_title">Организации-контрибьюторы</string>
+    <string name="contributing_orgs_summary"><a href="https://www.calyxinstitute.org">Calyx Institute</a> для использования в <a href="https://calyxos.org">CalyxOS</a></string>
+    <string name="work_profile_help">Настройки брандмауэра для рабочих приложений управляются в приложении Брандмауэр личного профиля. Рабочие приложения отмечены значком портфеля.</string>
+    <string name="settings">Настройки</string>
+    <string name="pref_default_internet_title">Разрешать доступ в интернет новым приложениям</string>
+    <string name="pref_default_internet_summary">По умолчанию новым приложениям разрешён доступ в интернет</string>
+    <string name="notification_channel_fgs">Фоновый сервис</string>
+    <string name="notification_channel_alert">Оповещения</string>
+    <string name="monitoring_new_app_installs_title">Контроль установки новых приложений</string>
+    <string name="monitoring_new_app_installs_desc">Брандмауэр теперь контролирует новые приложения, чтобы по умолчанию запрещать им доступ в интернет!</string>
+    <string name="internet_access_denied_title">Доступ к интернету запрещён!</string>
+    <string name="internet_access_denied_desc">У <xliff:g id="app_name">%1$s</xliff:g> нет доступа в интернет. Вы хотите разрешить доступ?</string>
+    <string name="allow">Разрешить</string>
+    <string name="notifications">Уведомления</string>
 </resources>
