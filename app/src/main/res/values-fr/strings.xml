@@ -16,7 +16,7 @@
     <string name="app_logo">Logo de l\'application</string>
     <string name="searchbar_hint">Chercher des applications</string>
     <string name="custom_settings">Paramètres personnalisés</string>
-    <string name="version">Version : <xliff:g id="version">%1$s</xliff:g></string>
+    <string name="version">Version : <xliff:g id="version">%1$s</xliff:g></string>
     <string name="contributors_title">Contributeurs</string>
     <string name="no_internet">L\'application ne demande pas l\'autorisation d\'utiliser Internet</string>
     <string name="contributing_orgs_title">Organisations participantes</string>
